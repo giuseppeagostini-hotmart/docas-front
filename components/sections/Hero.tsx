@@ -3,12 +3,13 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { getAssetPath } from "@/lib/utils";
 
 export default function Hero() {
   return (
     <section className="relative h-screen-85 min-h-[600px] md:min-h-[700px] w-full overflow-hidden">
       <Image
-        src="/assets/nature-house.jpg"
+        src={getAssetPath('/assets/nature-house.jpg')}
         alt="Pousada Docas"
         fill
         priority
