@@ -8,6 +8,7 @@ import {
   Car,
   Coffee
 } from "lucide-react";
+import { getAssetPath } from "@/lib/utils";
 
 const amenities = [
   {
@@ -81,7 +82,7 @@ export default function Amenities() {
             className="relative overflow-hidden rounded-xl shadow-xl"
           >
             <Image
-              src="/assets/nature-house.jpg"
+              src={getAssetPath('/assets/nature-house.jpg')}
               alt="Vista panorâmica da pousada"
               width={1200}
               height={400}
@@ -111,7 +112,7 @@ export default function Amenities() {
               className="rounded-xl overflow-hidden shadow-lg"
             >
               <Image
-                src="/assets/nature-house.jpg"
+                src={getAssetPath('/assets/nature-house.jpg')}
                 alt="Piscina da pousada"
                 width={600}
                 height={400}
@@ -131,7 +132,7 @@ export default function Amenities() {
               className="rounded-xl overflow-hidden shadow-lg"
             >
               <Image
-                src="/assets/nature-house.jpg"
+                src={getAssetPath('/assets/nature-house.jpg')}
                 alt="Restaurante da pousada"
                 width={600}
                 height={400}
@@ -151,7 +152,7 @@ export default function Amenities() {
               className="rounded-xl overflow-hidden shadow-lg"
             >
               <Image
-                src="/assets/nature-house.jpg"
+                src={getAssetPath('/assets/nature-house.jpg')}
                 alt="Jardins da pousada"
                 width={600}
                 height={400}
