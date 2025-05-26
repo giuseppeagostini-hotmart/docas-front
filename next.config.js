@@ -7,9 +7,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: process.env.GITHUB_ACTIONS && process.env.NODE_ENV === 'production' 
-    ? process.env.NEXT_PUBLIC_BASE_PATH 
-    : '',
+  basePath: '/docas-front',
 };
 
 module.exports = nextConfig;
