@@ -17,76 +17,76 @@ const images = [
   // Quartos
   {
     id: 1,
-    src: "/assets/gallery/rooms/room-1.jpg",
+    src: "/assets/nature-house.jpg",
     alt: "Quarto Luxo com Vista",
     category: "rooms",
   },
   {
     id: 2,
-    src: "/assets/gallery/rooms/room-2.jpg",
+    src: "/assets/nature-house.jpg",
     alt: "Suíte Master",
     category: "rooms",
   },
   {
     id: 3,
-    src: "/assets/gallery/rooms/room-3.jpg",
+    src: "/assets/nature-house.jpg",
     alt: "Quarto Premium",
     category: "rooms",
   },
   // Áreas Comuns
   {
     id: 4,
-    src: "/assets/gallery/common/pool.jpg",
+    src: "/assets/nature-house.jpg",
     alt: "Piscina",
     category: "common",
   },
   {
     id: 5,
-    src: "/assets/gallery/common/leisure.jpg",
+    src: "/assets/nature-house.jpg",
     alt: "Área de Lazer",
     category: "common",
   },
   {
     id: 6,
-    src: "/assets/gallery/common/lobby.jpg",
+    src: "/assets/nature-house.jpg",
     alt: "Lobby",
     category: "common",
   },
   // Eventos
   {
     id: 7,
-    src: "/assets/gallery/events/party.jpg",
+    src: "/assets/nature-house.jpg",
     alt: "Salão de Festas",
     category: "events",
   },
   {
     id: 8,
-    src: "/assets/gallery/events/events.jpg",
+    src: "/assets/nature-house.jpg",
     alt: "Área de Eventos",
     category: "events",
   },
   {
     id: 9,
-    src: "/assets/gallery/events/wedding.jpg",
+    src: "/assets/nature-house.jpg",
     alt: "Espaço para Casamentos",
     category: "events",
   },
   // Gastronomia
   {
     id: 10,
-    src: "/assets/gallery/food/breakfast.jpg",
+    src: "/assets/nature-house.jpg",
     alt: "Café da Manhã",
     category: "food",
   },
   {
     id: 11,
-    src: "/assets/gallery/food/restaurant.jpg",
+    src: "/assets/nature-house.jpg",
     alt: "Restaurante",
     category: "food",
   },
   {
     id: 12,
-    src: "/assets/gallery/food/bar.jpg",
+    src: "/assets/nature-house.jpg",
     alt: "Bar",
     category: "food",
   },

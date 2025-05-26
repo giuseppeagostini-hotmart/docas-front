@@ -14,9 +14,9 @@ const accommodations = [
     description:
       "Suíte espaçosa com três camas de solteiro, ideal para grupos de amigos ou famílias pequenas. Conta com banheiro privativo e varanda com vista para o jardim.",
     images: [
-      "/assets/rooms/room-1.jpg",
-      "/assets/rooms/room-2.jpg",
-      "/assets/rooms/room-3.jpg",
+      "/assets/nature-house.jpg",
+      "/assets/nature-house.jpg",
+      "/assets/nature-house.jpg",
     ],
     capacity: 3,
     bedType: "3 Camas de Solteiro",
@@ -30,9 +30,9 @@ const accommodations = [
     description:
       "Nossa maior suíte, perfeita para grupos grandes ou famílias. Equipada com cinco camas de solteiro, amplo espaço de convivência e banheiro privativo.",
     images: [
-      "/assets/rooms/room-4.jpg",
-      "/assets/rooms/room-5.jpg",
-      "/assets/rooms/room-6.jpg",
+      "/assets/nature-house.jpg",
+      "/assets/nature-house.jpg",
+      "/assets/nature-house.jpg",
     ],
     capacity: 5,
     bedType: "5 Camas de Solteiro",
@@ -46,9 +46,9 @@ const accommodations = [
     description:
       "Suíte confortável com três camas de solteiro, ideal para pequenos grupos. Ambiente acolhedor com banheiro privativo e todas as comodidades necessárias.",
     images: [
-      "/assets/rooms/room-7.jpg",
-      "/assets/rooms/room-8.jpg",
-      "/assets/rooms/room-9.jpg",
+      "/assets/nature-house.jpg",
+      "/assets/nature-house.jpg",
+      "/assets/nature-house.jpg",
     ],
     capacity: 3,
     bedType: "3 Camas de Solteiro",
