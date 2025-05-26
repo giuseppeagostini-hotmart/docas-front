@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 
 const categories = [
   { id: "all", label: "Todos" },

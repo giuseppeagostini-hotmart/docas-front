@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { getWhatsAppLink } from "@/lib/utils";
-import { Bed, Users, Bath, Wifi, WifiOff, Snowflake } from "lucide-react";
+import { Bed, Users, Bath, Snowflake } from "lucide-react";
 
 const accommodations = [
   {

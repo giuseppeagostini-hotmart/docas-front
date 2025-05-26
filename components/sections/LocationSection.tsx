@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { MapPin, Clock, Bus, Car } from "lucide-react";
+import { MapPin } from "lucide-react";
 
 export default function LocationSection() {
   return (
