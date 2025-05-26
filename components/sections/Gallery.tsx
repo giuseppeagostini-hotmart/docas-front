@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { getAssetPath } from "@/lib/utils";
 
 const categories = [
   { id: "all", label: "Todos" },
@@ -16,76 +17,76 @@ const images = [
   // Quartos
   {
     id: 1,
-    src: "/assets/nature-house.jpg",
+    src: "/assets/gallery/rooms/room-1.jpg",
     alt: "Quarto Luxo com Vista",
     category: "rooms",
   },
   {
     id: 2,
-    src: "/assets/nature-house.jpg",
+    src: "/assets/gallery/rooms/room-2.jpg",
     alt: "Suíte Master",
     category: "rooms",
   },
   {
     id: 3,
-    src: "/assets/nature-house.jpg",
+    src: "/assets/gallery/rooms/room-3.jpg",
     alt: "Quarto Premium",
     category: "rooms",
   },
   // Áreas Comuns
   {
     id: 4,
-    src: "/assets/nature-house.jpg",
+    src: "/assets/gallery/common/pool.jpg",
     alt: "Piscina",
     category: "common",
   },
   {
     id: 5,
-    src: "/assets/nature-house.jpg",
+    src: "/assets/gallery/common/leisure.jpg",
     alt: "Área de Lazer",
     category: "common",
   },
   {
     id: 6,
-    src: "/assets/nature-house.jpg",
+    src: "/assets/gallery/common/lobby.jpg",
     alt: "Lobby",
     category: "common",
   },
   // Eventos
   {
     id: 7,
-    src: "/assets/nature-house.jpg",
+    src: "/assets/gallery/events/party.jpg",
     alt: "Salão de Festas",
     category: "events",
   },
   {
     id: 8,
-    src: "/assets/nature-house.jpg",
+    src: "/assets/gallery/events/events.jpg",
     alt: "Área de Eventos",
     category: "events",
   },
   {
     id: 9,
-    src: "/assets/nature-house.jpg",
+    src: "/assets/gallery/events/wedding.jpg",
     alt: "Espaço para Casamentos",
     category: "events",
   },
   // Gastronomia
   {
     id: 10,
-    src: "/assets/nature-house.jpg",
+    src: "/assets/gallery/food/breakfast.jpg",
     alt: "Café da Manhã",
     category: "food",
   },
   {
     id: 11,
-    src: "/assets/nature-house.jpg",
+    src: "/assets/gallery/food/restaurant.jpg",
     alt: "Restaurante",
     category: "food",
   },
   {
     id: 12,
-    src: "/assets/nature-house.jpg",
+    src: "/assets/gallery/food/bar.jpg",
     alt: "Bar",
     category: "food",
   },
@@ -157,7 +158,7 @@ export default function Gallery() {
               onClick={() => setSelectedImage(image.id)}
             >
               <Image
-                src={image.src}
+                src={getAssetPath(image.src)}
                 alt={image.alt}
                 fill
                 className="object-cover transition-transform duration-300 group-hover:scale-110"
@@ -182,7 +183,7 @@ export default function Gallery() {
           >
             <div className="relative max-w-5xl w-full aspect-[4/3]">
               <Image
-                src={images.find((img) => img.id === selectedImage)?.src || ""}
+                src={getAssetPath(images.find((img) => img.id === selectedImage)?.src || "")}
                 alt={images.find((img) => img.id === selectedImage)?.alt || ""}
                 fill
                 className="object-contain"

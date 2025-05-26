@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { getWhatsAppLink } from "@/lib/utils";
+import { getWhatsAppLink, getAssetPath } from "@/lib/utils";
 import { Bed, Users, Bath, Snowflake } from "lucide-react";
 
 const accommodations = [
@@ -14,9 +14,9 @@ const accommodations = [
     description:
       "Suíte espaçosa com três camas de solteiro, ideal para grupos de amigos ou famílias pequenas. Conta com banheiro privativo e varanda com vista para o jardim.",
     images: [
-      "/assets/nature-house.jpg",
-      "/assets/nature-house.jpg",
-      "/assets/nature-house.jpg",
+      "/assets/rooms/room-1.jpg",
+      "/assets/rooms/room-2.jpg",
+      "/assets/rooms/room-3.jpg",
     ],
     capacity: 3,
     bedType: "3 Camas de Solteiro",
@@ -30,9 +30,9 @@ const accommodations = [
     description:
       "Nossa maior suíte, perfeita para grupos grandes ou famílias. Equipada com cinco camas de solteiro, amplo espaço de convivência e banheiro privativo.",
     images: [
-      "/assets/nature-house.jpg",
-      "/assets/nature-house.jpg",
-      "/assets/nature-house.jpg",
+      "/assets/rooms/room-4.jpg",
+      "/assets/rooms/room-5.jpg",
+      "/assets/rooms/room-6.jpg",
     ],
     capacity: 5,
     bedType: "5 Camas de Solteiro",
@@ -46,9 +46,9 @@ const accommodations = [
     description:
       "Suíte confortável com três camas de solteiro, ideal para pequenos grupos. Ambiente acolhedor com banheiro privativo e todas as comodidades necessárias.",
     images: [
-      "/assets/nature-house.jpg",
-      "/assets/nature-house.jpg",
-      "/assets/nature-house.jpg",
+      "/assets/rooms/room-7.jpg",
+      "/assets/rooms/room-8.jpg",
+      "/assets/rooms/room-9.jpg",
     ],
     capacity: 3,
     bedType: "3 Camas de Solteiro",
@@ -126,7 +126,7 @@ export default function Accommodations() {
           >
             <div className="relative rounded-lg overflow-hidden shadow-lg h-[300px] sm:h-[400px] md:h-[500px]">
               <Image
-                src={selectedRoom.images[currentImageIndex]}
+                src={getAssetPath(selectedRoom.images[currentImageIndex])}
                 alt={selectedRoom.name}
                 fill
                 className="object-cover"
