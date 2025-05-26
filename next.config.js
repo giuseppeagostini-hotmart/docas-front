@@ -1,13 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   images: {
     unoptimized: true,
   },
-  basePath: '/docas-front',
+  basePath: process.env.NODE_ENV === 'production' ? '/docas-front' : '',
 };
 
 module.exports = nextConfig;

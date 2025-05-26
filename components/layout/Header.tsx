@@ -3,9 +3,10 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { getWhatsAppLink } from "@/lib/utils";
+import { getWhatsAppLink, getAssetPath } from "@/lib/utils";
 
 const navLinks = [
   { name: "Início", href: "#" },
@@ -21,6 +22,8 @@ const navLinks = [
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const basePath = pathname.startsWith('/docas-front') ? '/docas-front' : '';
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -51,7 +54,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center">
             <Image
-              src="/logo.svg"
+              src={getAssetPath("/logo.svg")}
               alt="Pousada Docas"
               width={150}
               height={50}

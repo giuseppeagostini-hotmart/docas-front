@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Instagram, Mail, Phone, MapPin } from "lucide-react";
-import { formatPhoneNumber } from "@/lib/utils";
+import { formatPhoneNumber, getAssetPath } from "@/lib/utils";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
             <div className="flex flex-col items-center md:items-start">
               <Image
-                src="/logo-white.svg"
+                src={getAssetPath("/logo-white.svg")}
                 alt="Pousada Docas"
                 width={180}
                 height={60}

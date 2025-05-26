@@ -15,3 +15,8 @@ export function getWhatsAppLink(
 ): string {
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }
+
+export function getAssetPath(path: string) {
+  const isProd = process.env.NODE_ENV === 'production';
+  return isProd ? `/docas-front${path}` : path;
+}
