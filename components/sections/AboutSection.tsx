@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { getWhatsAppLink } from "@/lib/utils";
+import { getAssetPath, getWhatsAppLink } from "@/lib/utils";
 
 export default function AboutSection() {
   return (
@@ -57,7 +57,7 @@ export default function AboutSection() {
           >
             <div className="relative z-10 rounded-lg overflow-hidden shadow-xl">
               <Image
-                src="/assets/nature-house.jpg"
+                src={getAssetPath('/assets/nature-house.jpg')}
                 alt="Vista da Pousada Docas"
                 width={600}
                 height={500}
