@@ -17,6 +17,8 @@ const lora = Lora({
   variable: "--font-lora",
 });
 
+const faviconSvg = `data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🏠</text></svg>`;
+
 export const metadata: Metadata = {
   title: "Pousada Docas | Conforto e Natureza em Minas Gerais",
   description:
@@ -30,6 +32,10 @@ export const metadata: Metadata = {
     "pousada docas",
     "hospedagem minas gerais",
   ],
+  icons: {
+    icon: faviconSvg,
+    shortcut: faviconSvg,
+  },
   authors: [{ name: "Pousada Docas" }],
   openGraph: {
     type: "website",
