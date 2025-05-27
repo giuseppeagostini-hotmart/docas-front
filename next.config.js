@@ -14,18 +14,13 @@ const nextConfig = {
   },
   
   basePath,
+  assetPrefix: basePath,
   
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,
   },
   
   compress: true,
-  poweredByHeader: false,
-  
-  experimental: {
-    optimizeCss: true,
-    optimizePackageImports: ['framer-motion', 'lucide-react'],
-  },
 };
 
 module.exports = nextConfig;
