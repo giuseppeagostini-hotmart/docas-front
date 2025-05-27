@@ -24,7 +24,7 @@ const TESTIMONIALS: Testimonial[] = [
     location: "São Paulo, SP",
     rating: 5,
     text: "Uma experiência incrível! A pousada é linda, o atendimento é excelente e a localização é perfeita para quem busca tranquilidade.",
-    image: "/assets/nature-house.jpg",
+    image: "/assets/nature-house.webp",
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ const TESTIMONIALS: Testimonial[] = [
     location: "Rio de Janeiro, RJ",
     rating: 5,
     text: "Lugar maravilhoso para relaxar. Os quartos são muito confortáveis e a equipe é super atenciosa. Voltarei com certeza!",
-    image: "/assets/nature-house.jpg",
+    image: "/assets/nature-house.webp",
   },
   {
     id: 3,
@@ -40,7 +40,7 @@ const TESTIMONIALS: Testimonial[] = [
     location: "Belo Horizonte, MG",
     rating: 5,
     text: "Realizamos nosso casamento na pousada e foi perfeito! A estrutura é excelente e a organização foi impecável.",
-    image: "/assets/nature-house.jpg",
+    image: "/assets/nature-house.webp",
   },
 ];
 
@@ -53,6 +53,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
           alt={testimonial.name}
           fill
           className="object-cover"
+          loading="lazy"
         />
       </div>
       <div>

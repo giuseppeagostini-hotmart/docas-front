@@ -13,11 +13,12 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
             <div className="flex flex-col items-center md:items-start">
               <Image
-                src={getAssetPath("assets/docas-logo-comp.png")}
+                src={getAssetPath("assets/docas-logo-comp.webp")}
                 alt="Pousada Docas"
                 width={80}
                 height={80}
                 className="mb-4"
+                loading="lazy"
               />
               <p className="text-slate-300 text-sm text-center md:text-left">
                 Uma pousada aconchegante em Minas Gerais, cercada pela natureza.

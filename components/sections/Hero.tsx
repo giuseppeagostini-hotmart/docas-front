@@ -9,11 +9,14 @@ export default function Hero() {
   return (
     <section className="relative h-screen-85 min-h-[600px] md:min-h-[700px] w-full overflow-hidden">
       <Image
-        src={getAssetPath('/assets/nature-house.jpg')}
+        src={getAssetPath('/assets/nature-house.webp')}
         alt="Pousada Docas"
         fill
         priority
         className="object-cover"
+        fetchPriority="high" // Adicione esta linha
+        quality={85} // Reduza ligeiramente a qualidade
+        sizes="100vw" // Importante para imagens full-width
       />
       <div className="absolute inset-0 bg-black bg-opacity-40" />
 

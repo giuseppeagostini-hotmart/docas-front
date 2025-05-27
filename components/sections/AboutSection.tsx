@@ -57,11 +57,12 @@ export default function AboutSection() {
           >
             <div className="relative z-10 rounded-lg overflow-hidden shadow-xl">
               <Image
-                src={getAssetPath('/assets/nature-house.jpg')}
+                src={getAssetPath('/assets/nature-house.webp')}
                 alt="Vista da Pousada Docas"
                 width={600}
                 height={500}
                 className="w-full object-cover h-[500px]"
+                loading="lazy"
               />
             </div>
             <div className="absolute -top-8 -right-8 z-0 w-40 h-40 bg-primary/10 rounded-full hidden md:block"></div>

@@ -6,7 +6,8 @@ const nextConfig = {
   output: 'export',
   trailingSlash: true,
   images: {
-    unoptimized: true,
+    unoptimized: true, // Mude para false se possível
+    formats: ['image/webp', 'image/avif'], // Formatos modernos
   },
   basePath,
   assetPrefix: basePath, // ⭐ Isso é crucial para o favicon

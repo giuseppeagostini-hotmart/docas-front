@@ -82,11 +82,12 @@ export default function Amenities() {
             className="relative overflow-hidden rounded-xl shadow-xl"
           >
             <Image
-              src={getAssetPath('/assets/nature-house.jpg')}
+              src={getAssetPath('/assets/nature-house.webp')}
               alt="Vista panorâmica da pousada"
               width={1200}
               height={400}
               className="w-full h-[300px] md:h-[400px] object-cover"
+              loading="lazy"
             />
             
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-end">
@@ -112,11 +113,12 @@ export default function Amenities() {
               className="rounded-xl overflow-hidden shadow-lg"
             >
               <Image
-                src={getAssetPath('/assets/nature-house.jpg')}
+                src={getAssetPath('/assets/nature-house.webp')}
                 alt="Piscina da pousada"
                 width={600}
                 height={400}
                 className="w-full h-64 object-cover"
+                loading="lazy"
               />
               <div className="p-4 bg-white">
                 <h4 className="text-lg font-medium mb-2">Piscina</h4>
@@ -132,11 +134,12 @@ export default function Amenities() {
               className="rounded-xl overflow-hidden shadow-lg"
             >
               <Image
-                src={getAssetPath('/assets/nature-house.jpg')}
+                src={getAssetPath('/assets/nature-house.webp')}
                 alt="Restaurante da pousada"
                 width={600}
                 height={400}
                 className="w-full h-64 object-cover"
+                loading="lazy"
               />
               <div className="p-4 bg-white">
                 <h4 className="text-lg font-medium mb-2">Área de Restaurante</h4>
@@ -152,11 +155,12 @@ export default function Amenities() {
               className="rounded-xl overflow-hidden shadow-lg"
             >
               <Image
-                src={getAssetPath('/assets/nature-house.jpg')}
+                src={getAssetPath('/assets/nature-house.webp')}
                 alt="Jardins da pousada"
                 width={600}
                 height={400}
                 className="w-full h-64 object-cover"
+                loading="lazy"
               />
               <div className="p-4 bg-white">
                 <h4 className="text-lg font-medium mb-2">Jardins</h4>

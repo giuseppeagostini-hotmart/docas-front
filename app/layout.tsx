@@ -61,8 +61,21 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Determine o caminho base baseado no ambiente
+  const isProd = process.env.NODE_ENV === 'production';
+  const basePath = isProd ? '/docas-front' : '';
+  
   return (
     <html lang="pt-BR" className="scroll-smooth">
+      <head>
+        {/* Preload da imagem hero crítica para melhorar LCP */}
+        <link 
+          rel="preload" 
+          as="image" 
+          href={`${basePath}/assets/nature-house.webp`}
+          fetchPriority="high"
+        />
+      </head>
       <body
         className={`${inter.variable} ${lora.variable} font-sans bg-background text-slate-800`}
       >

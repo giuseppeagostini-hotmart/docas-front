@@ -19,19 +19,19 @@ const EVENTS: Event[] = [
     id: 1,
     title: "Casamentos",
     description: "Realize seu sonho em um cenário deslumbrante, com todo o suporte necessário para tornar seu dia especial inesquecível.",
-    image: "/assets/nature-house.jpg",
+    image: "/assets/nature-house.webp",
   },
   {
     id: 2,
     title: "Eventos Corporativos",
     description: "Espaço ideal para reuniões, workshops e team buildings, com infraestrutura completa e ambiente inspirador.",
-    image: "/assets/nature-house.jpg",
+    image: "/assets/nature-house.webp",
   },
   {
     id: 3,
     title: "Festas",
     description: "Comemore momentos especiais em um ambiente acolhedor e elegante, com serviço personalizado.",
-    image: "/assets/nature-house.jpg",
+    image: "/assets/nature-house.webp",
   },
 ];
 
@@ -42,6 +42,7 @@ const EventCard = ({ event }: { event: Event }) => (
       alt={event.title}
       fill
       className="object-cover"
+      loading="lazy"
     />
     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
     <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 text-white">

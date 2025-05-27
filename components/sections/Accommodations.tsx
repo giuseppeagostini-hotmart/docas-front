@@ -14,9 +14,9 @@ const accommodations = [
     description:
       "Suíte espaçosa com três camas de solteiro, ideal para grupos de amigos ou famílias pequenas. Conta com banheiro privativo e varanda com vista para o jardim.",
     images: [
-      "/assets/nature-house.jpg",
-      "/assets/nature-house.jpg",
-      "/assets/nature-house.jpg",
+      "/assets/nature-house.webp",
+      "/assets/nature-house.webp",
+      "/assets/nature-house.webp",
     ],
     capacity: 3,
     bedType: "3 Camas de Solteiro",
@@ -30,9 +30,9 @@ const accommodations = [
     description:
       "Nossa maior suíte, perfeita para grupos grandes ou famílias. Equipada com cinco camas de solteiro, amplo espaço de convivência e banheiro privativo.",
     images: [
-      "/assets/nature-house.jpg",
-      "/assets/nature-house.jpg",
-      "/assets/nature-house.jpg",
+      "/assets/nature-house.webp",
+      "/assets/nature-house.webp",
+      "/assets/nature-house.webp",
     ],
     capacity: 5,
     bedType: "5 Camas de Solteiro",
@@ -46,9 +46,9 @@ const accommodations = [
     description:
       "Suíte confortável com três camas de solteiro, ideal para pequenos grupos. Ambiente acolhedor com banheiro privativo e todas as comodidades necessárias.",
     images: [
-      "/assets/nature-house.jpg",
-      "/assets/nature-house.jpg",
-      "/assets/nature-house.jpg",
+      "/assets/nature-house.webp",
+      "/assets/nature-house.webp",
+      "/assets/nature-house.webp",
     ],
     capacity: 3,
     bedType: "3 Camas de Solteiro",
@@ -130,6 +130,7 @@ export default function Accommodations() {
                 alt={selectedRoom.name}
                 fill
                 className="object-cover"
+                loading="lazy"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent h-1/3"></div>
               
