@@ -24,10 +24,10 @@ const ContactInfo = () => (
         <div>
           <h4 className="font-medium text-slate-900">Telefone</h4>
           <a
-            href={`tel:+553133333333`}
+            href={`tel:+5537988513237`}
             className="text-sm text-slate-600 hover:text-primary transition-colors"
           >
-            {formatPhoneNumber("3133333333")}
+            {formatPhoneNumber("37988513237")}
           </a>
         </div>
       </div>
@@ -44,6 +44,18 @@ const ContactInfo = () => (
           >
             contato@pousadadocas.com.br
           </a>
+        </div>
+      </div>
+
+      <div className="flex items-center gap-3">
+        <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+          <MapPin className="text-primary" size={20} />
+        </div>
+        <div>
+          <h4 className="font-medium text-slate-900">Endereço</h4>
+          <p className="text-sm text-slate-600">
+            R. Profa. Cecília de Freitas Lobato, 486, Leandro Ferreira - MG, 35657-000
+          </p>
         </div>
       </div>
     </div>

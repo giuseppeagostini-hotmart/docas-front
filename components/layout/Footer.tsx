@@ -13,11 +13,11 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
             <div className="flex flex-col items-center md:items-start">
               <Image
-                src={getAssetPath("/logo-white.svg")}
+                src={getAssetPath("assets/docas-logo-comp.png")}
                 alt="Pousada Docas"
-                width={180}
-                height={60}
-                className="h-12 w-auto mb-4"
+                width={80}
+                height={80}
+                className="mb-4"
               />
               <p className="text-slate-300 text-sm text-center md:text-left">
                 Uma pousada aconchegante em Minas Gerais, cercada pela natureza.
@@ -27,8 +27,8 @@ export default function Footer() {
             <div className="flex flex-col items-center md:items-start gap-3">
               <div className="text-sm text-slate-300 flex items-center gap-2">
                 <Phone size={16} />
-                <a href={`tel:+553133333333`} className="hover:text-secondary">
-                  {formatPhoneNumber("3133333333")}
+                <a href={`tel:+5537988513237`} className="hover:text-secondary">
+                  {formatPhoneNumber("37988513237")}
                 </a>
               </div>
               <div className="text-sm text-slate-300 flex items-center gap-2">
@@ -39,7 +39,7 @@ export default function Footer() {
               </div>
               <div className="text-sm text-slate-300 flex items-center gap-2">
                 <MapPin size={16} className="flex-shrink-0" />
-                <span>Rua das Flores, 123 - Brumadinho, MG</span>
+                <span>R. Profa. Cecília de Freitas Lobato, 486, Leandro Ferreira - MG, 35657-000</span>
               </div>
             </div>
 

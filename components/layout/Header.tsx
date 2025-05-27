@@ -51,11 +51,10 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center">
             <Image
-              src={getAssetPath("/logo.svg")}
+              src={getAssetPath("assets/docas-logo-comp.png")}
               alt="Pousada Docas"
-              width={150}
-              height={50}
-              className="h-10 w-auto"
+              width={40}
+              height={40}
             />
           </Link>
 
