@@ -51,7 +51,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center">
             <Image
-              src={getAssetPath("assets/docas-logo-comp.webp")}
+              src={getAssetPath("/assets/docas-logo-comp.webp")}
               alt="Pousada Docas"
               width={40}
               height={40}
