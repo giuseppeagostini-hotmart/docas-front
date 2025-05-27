@@ -55,6 +55,7 @@ export default function Header() {
               alt="Pousada Docas"
               width={40}
               height={40}
+              priority
             />
           </Link>
 

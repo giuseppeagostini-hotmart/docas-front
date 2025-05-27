@@ -5,16 +5,27 @@ const basePath = isProd ? '/docas-front' : '';
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
+  
   images: {
-    unoptimized: true, // Mude para false se possível
-    formats: ['image/webp', 'image/avif'], // Formatos modernos
+    unoptimized: true,
+    formats: ['image/avif', 'image/webp'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
+  
   basePath,
-  assetPrefix: basePath, // ⭐ Isso é crucial para o favicon
   
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,
-  }
+  },
+  
+  compress: true,
+  poweredByHeader: false,
+  
+  experimental: {
+    optimizeCss: true,
+    optimizePackageImports: ['framer-motion', 'lucide-react'],
+  },
 };
 
 module.exports = nextConfig;
