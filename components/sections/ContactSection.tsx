@@ -15,48 +15,45 @@ interface ContactFormData {
 }
 
 const ContactInfo = () => (
-  <div className="space-y-6">
-    <div className="flex items-center gap-3">
-      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-        <Phone className="text-primary" size={20} />
+  <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg border border-slate-100">
+    <div className="space-y-6 mb-6">
+      <div className="flex items-center gap-3">
+        <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+          <Phone className="text-primary" size={20} />
+        </div>
+        <div>
+          <h4 className="font-medium text-slate-900">Telefone</h4>
+          <a
+            href={`tel:+553133333333`}
+            className="text-sm text-slate-600 hover:text-primary transition-colors"
+          >
+            {formatPhoneNumber("3133333333")}
+          </a>
+        </div>
       </div>
-      <div>
-        <h4 className="font-medium text-slate-900">Telefone</h4>
-        <a
-          href={`tel:+553133333333`}
-          className="text-sm text-slate-600 hover:text-primary transition-colors"
-        >
-          {formatPhoneNumber("3133333333")}
-        </a>
-      </div>
-    </div>
 
-    <div className="flex items-center gap-3">
-      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-        <Mail className="text-primary" size={20} />
-      </div>
-      <div>
-        <h4 className="font-medium text-slate-900">E-mail</h4>
-        <a
-          href="mailto:contato@pousadadocas.com.br"
-          className="text-sm text-slate-600 hover:text-primary transition-colors"
-        >
-          contato@pousadadocas.com.br
-        </a>
-      </div>
-    </div>
-
-    <div className="flex items-center gap-3">
-      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-        <MapPin className="text-primary" size={20} />
-      </div>
-      <div>
-        <h4 className="font-medium text-slate-900">Endereço</h4>
-        <p className="text-sm text-slate-600">
-          Rua das Flores, 123 - Brumadinho, MG
-        </p>
+      <div className="flex items-center gap-3">
+        <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+          <Mail className="text-primary" size={20} />
+        </div>
+        <div>
+          <h4 className="font-medium text-slate-900">E-mail</h4>
+          <a
+            href="mailto:contato@pousadadocas.com.br"
+            className="text-sm text-slate-600 hover:text-primary transition-colors"
+          >
+            contato@pousadadocas.com.br
+          </a>
+        </div>
       </div>
     </div>
+    
+    <Button
+      className="w-full"
+      onClick={() => window.open(getWhatsAppLink(), "_blank")}
+    >
+      Entrar em contato via WhatsApp
+    </Button>
   </div>
 );
 
@@ -175,25 +172,8 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:pt-8"
           >
             <ContactInfo />
-
-            <div className="mt-8 sm:mt-12 p-6 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-xl border border-slate-100">
-              <h4 className="text-lg font-medium text-primary mb-2">
-                Atendimento via WhatsApp
-              </h4>
-              <p className="text-sm text-slate-700 mb-4">
-                Para um atendimento mais rápido, entre em contato pelo WhatsApp.
-              </p>
-              <Button
-                variant="secondary"
-                className="w-full"
-                onClick={() => window.open(getWhatsAppLink(), "_blank")}
-              >
-                Falar no WhatsApp
-              </Button>
-            </div>
           </motion.div>
         </div>
       </div>
