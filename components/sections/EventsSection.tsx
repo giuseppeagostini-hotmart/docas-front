@@ -67,7 +67,7 @@ export default function EventsSection() {
   }, []);
 
   return (
-    <section className="py-12 sm:py-20 bg-background" id="eventos">
+    <section className="py-12 sm:py-20 bg-white" id="eventos">
       <div className="container-custom">
         <motion.div
           className="text-center max-w-3xl mx-auto mb-8 sm:mb-16 px-4"

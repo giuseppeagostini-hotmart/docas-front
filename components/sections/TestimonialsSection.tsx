@@ -1,170 +1,170 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
-import Image from "next/image";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
-import { getAssetPath } from "@/lib/utils";
-
-const AUTOPLAY_INTERVAL = 5000;
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
 
 interface Testimonial {
-  id: number;
   name: string;
-  location: string;
-  rating: number;
-  text: string;
-  image: string;
+  comment: string;
+  ratings: { quartos: number; servico: number; local: number };
+  highlights: string[];
 }
 
 const TESTIMONIALS: Testimonial[] = [
   {
-    id: 1,
-    name: "Ana Silva",
-    location: "São Paulo, SP",
-    rating: 5,
-    text: "Uma experiência incrível! A pousada é linda, o atendimento é excelente e a localização é perfeita para quem busca tranquilidade.",
-    image: "/assets/nature-house.webp",
+    name: "Vanessa Tatiana",
+    comment: 'A pousada é PERFEITA! Clima muito agradável. Tudo muito limpo, cama confortável, chuveiro excelente, café da manhã delicioso e muito caprichado. É tudo exatamente como nas fotos, mas a sensação lá é maravilhosa!\nEstadia excelente, o local é muito agradável e a Luciene nos fez nos sentirmos em casa.',
+    ratings: { quartos: 5, servico: 5, local: 5 },
+    highlights: ["Muito limpo", "Café delicioso", "Como em casa"]
   },
   {
-    id: 2,
-    name: "Carlos Santos",
-    location: "Rio de Janeiro, RJ",
-    rating: 5,
-    text: "Lugar maravilhoso para relaxar. Os quartos são muito confortáveis e a equipe é super atenciosa. Voltarei com certeza!",
-    image: "/assets/nature-house.webp",
+    name: "Conceição Santos",
+    comment: "Passamos o fim de semana e ficamos muito satisfeitos com tudo. Os quartos são aconchegantes, banheiros muito bons, piscina excelente, tudo muito bem cuidado. Luciene quem nos recepcionou é um amor de pessoa, muito receptiva e ficou disponível o tempo todo caso fosse necessário. Só elogios mesmo.",
+    ratings: { quartos: 5, servico: 5, local: 5 },
+    highlights: ["Vista linda", "Tranquilo", "Ideal para crianças"]
   },
   {
-    id: 3,
-    name: "Mariana Costa",
-    location: "Belo Horizonte, MG",
-    rating: 5,
-    text: "Realizamos nosso casamento na pousada e foi perfeito! A estrutura é excelente e a organização foi impecável.",
-    image: "/assets/nature-house.webp",
+    name: "Júnior Soares",
+    comment: "É a segunda vez que alugamos e só temos elogios. Espaço lindo, aconchegante, desde as acomodações até a recepção, pessoas atenciosas, humildes e muito comprometidas com o bem estar dos hóspedes, amei o período que passamos aí, esperamos voltar em breve! Luciene que nos atendeu, super atenciosa, o tempo todo disponível.",
+    ratings: { quartos: 5, servico: 5, local: 5 },
+    highlights: ["Espaço lindo", "Muito aconchegante"]
   },
+  {
+    name: "Carol Souza",
+    comment: "Espaço lindo, aconchegante, desde as acomodações até a recepção, pessoas atenciosas, humildes e muito compromissadas com o bem estar dos hóspedes, amei o período que passamos aí, esperamos voltar em breve!! 🙏",
+    ratings: { quartos: 5, servico: 5, local: 5 },
+    highlights: ["Espaço lindo", "Pessoas atenciosas", "Muito aconchegante"]
+  },
+  {
+    name: "Thaís Sousa",
+    comment: "A pousada é super aconchegante, quartos com roupas de cama e banho limpinhas e cheirosas. O café da manhã sensacional, piscina limpinha.\nFoi maravilhoso nosso final de semana e com certeza pretendemos voltar.",
+    ratings: { quartos: 5, servico: 5, local: 5 },
+    highlights: ["Super aconchegante", "Café sensacional", "Piscina limpinha"]
+  }
 ];
 
-const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
-  <div className="bg-white rounded-xl p-6 sm:p-8 shadow-soft h-full">
-    <div className="flex items-center mb-4 sm:mb-6">
-      <div className="relative w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden mr-3 sm:mr-4">
-        <Image
-          src={getAssetPath(testimonial.image)}
-          alt={testimonial.name}
-          fill
-          className="object-cover"
-          loading="lazy"
-        />
-      </div>
-      <div>
-        <h4 className="font-medium text-base sm:text-lg">{testimonial.name}</h4>
-        <p className="text-xs sm:text-sm text-slate-500">{testimonial.location}</p>
-      </div>
-    </div>
-    
-    <div className="flex mb-3 sm:mb-4">
-      {[...Array(5)].map((_, i) => (
+function RatingRow({ label, value }: { label: string; value: number }) {
+  return (
+    <div className="flex items-center gap-1 text-xs text-slate-600">
+      <span className="font-medium">{label}:</span>
+      {Array.from({ length: 5 }, (_, i) => (
         <Star
           key={i}
           size={14}
-          className={i < testimonial.rating ? "fill-yellow-400 text-yellow-400" : "text-slate-300"}
+          className={i < value ? "fill-yellow-400 text-yellow-400" : "text-slate-300"}
         />
       ))}
     </div>
-    
-    <p className="text-slate-700 text-sm sm:text-base italic">{testimonial.text}</p>
-  </div>
-);
+  );
+}
+
+function ReviewCard({ name, comment, ratings, highlights }: Testimonial) {
+  return (
+    <div className="bg-white rounded-2xl shadow-lg p-6 h-full max-w-md lg:max-w-lg mx-auto">
+      <h4 className="font-semibold text-lg mb-3">{name}</h4>
+      
+      <div className="space-y-1 mb-3">
+        <RatingRow label="Quartos" value={ratings.quartos} />
+        <RatingRow label="Serviço" value={ratings.servico} />
+        <RatingRow label="Local" value={ratings.local} />
+      </div>
+
+      <div className="flex flex-wrap gap-2 mb-3">
+        {highlights.map((highlight, i) => (
+          <span
+            key={i}
+            className="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full"
+          >
+            {highlight}
+          </span>
+        ))}
+      </div>
+
+      <p className="text-slate-700 text-sm italic whitespace-pre-line">
+        {comment}
+      </p>
+    </div>
+  );
+}
 
 export default function TestimonialsSection() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-
-  const nextSlide = useCallback(() => {
-    setCurrentIndex(prev => (prev + 1) % TESTIMONIALS.length);
-  }, []);
-
-  const prevSlide = useCallback(() => {
-    setCurrentIndex(prev => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
-  }, []);
-
-  useEffect(() => {
-    if (!isAutoPlaying) return;
-    const interval = setInterval(nextSlide, AUTOPLAY_INTERVAL);
-    return () => clearInterval(interval);
-  }, [isAutoPlaying, nextSlide]);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
+    initial: 0,
+    slideChanged(s) {
+      setCurrentSlide(s.track.details.rel);
+    },
+    loop: true,
+    slides: {
+      perView: 1,
+      spacing: 24,
+    },
+    breakpoints: {
+      "(min-width: 768px)": {
+        slides: { perView: 2, spacing: 24 }
+      },
+      "(min-width: 1024px)": {
+        slides: { perView: 3, spacing: 24 }
+      }
+    }
+  });
 
   return (
-    <section className="py-12 sm:py-20 bg-background">
-      <div className="container-custom">
+    <section className="py-16 bg-background">
+      <div className="container mx-auto px-4">
         <motion.div
-          className="text-center max-w-3xl mx-auto mb-8 sm:mb-16 px-4"
+          className="text-center max-w-2xl mx-auto mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="section-title after:left-1/2 after:-translate-x-1/2 mb-6 sm:mb-8 text-2xl sm:text-3xl md:text-4xl">
-            O que dizem <span className="text-gradient">nossos hóspedes</span>
+          <h2 className="text-3xl font-bold mb-4">
+            Avaliações <span className="text-gradient">da Pousada</span>
           </h2>
         </motion.div>
 
-        <div className="relative px-4 sm:px-0">
-          <div className="overflow-hidden">
-            <div 
-              className="flex gap-6 sm:gap-8 transition-all duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentIndex * (100 / TESTIMONIALS.length)}%)` }}
-            >
-              {[...TESTIMONIALS, ...TESTIMONIALS].map((testimonial, index) => (
-                <div
-                  key={`${testimonial.id}-${index}`}
-                  className="w-full md:w-1/2 lg:w-1/3 flex-shrink-0"
-                >
-                  <TestimonialCard testimonial={testimonial} />
-                </div>
-              ))}
-            </div>
+        <div className="relative max-w-7xl mx-auto">
+          <div ref={sliderRef} className="keen-slider min-h-96">
+            {TESTIMONIALS.map((testimonial, index) => (
+              <div
+                key={index}
+                className="keen-slider__slide flex items-stretch p-3"
+              >
+                <ReviewCard {...testimonial} />
+              </div>
+            ))}
           </div>
 
-          <div className="flex items-center justify-center mt-8 gap-4">
+          {/* Navigation */}
+          <div className="flex items-center justify-between mt-6">
             <button
-              onClick={() => {
-                setIsAutoPlaying(false);
-                prevSlide();
-              }}
-              className="w-10 h-10 rounded-full bg-white hover:bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-700 transition-all hover:scale-110 shadow-sm"
-              aria-label="Depoimento anterior"
+              className="p-2 rounded-full bg-white border shadow hover:bg-gray-50 transition-colors"
+              onClick={() => instanceRef.current?.prev()}
             >
-              <Star size={20} />
+              <ChevronLeft size={20} />
             </button>
-
+            
             <div className="flex gap-2">
-              {TESTIMONIALS.map((_, index) => (
+              {TESTIMONIALS.map((_, idx) => (
                 <button
-                  key={index}
-                  onClick={() => {
-                    setIsAutoPlaying(false);
-                    setCurrentIndex(index);
-                  }}
-                  className={`h-1.5 rounded-full transition-all ${
-                    index === currentIndex
-                      ? "w-6 bg-primary"
-                      : "w-1.5 bg-slate-300 hover:bg-slate-400"
+                  key={idx}
+                  className={`h-2 w-6 rounded-full transition-colors ${
+                    idx === currentSlide ? "bg-primary" : "bg-gray-300"
                   }`}
-                  aria-label={`Ir para depoimento ${index + 1}`}
+                  onClick={() => instanceRef.current?.moveToIdx(idx)}
                 />
               ))}
             </div>
-
+            
             <button
-              onClick={() => {
-                setIsAutoPlaying(false);
-                nextSlide();
-              }}
-              className="w-10 h-10 rounded-full bg-white hover:bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-700 transition-all hover:scale-110 shadow-sm"
-              aria-label="Próximo depoimento"
+              className="p-2 rounded-full bg-white border shadow hover:bg-gray-50 transition-colors"
+              onClick={() => instanceRef.current?.next()}
             >
-              <Star size={20} />
+              <ChevronRight size={20} />
             </button>
           </div>
         </div>

@@ -28,14 +28,14 @@ export default function Footer() {
             <div className="flex flex-col items-center md:items-start gap-3">
               <div className="text-sm text-slate-300 flex items-center gap-2">
                 <Phone size={16} />
-                <a href={`tel:+5537988513237`} className="hover:text-secondary">
+                <a href={`tel:+5537988513237`} className="text-slate-300 hover:text-secondary transition-colors">
                   {formatPhoneNumber("37988513237")}
                 </a>
               </div>
               <div className="text-sm text-slate-300 flex items-center gap-2">
                 <Mail size={16} />
-                <a href="mailto:contato@pousadadocas.com.br" className="hover:text-secondary">
-                  contato@pousadadocas.com.br
+                <a href="mailto:docaspousada@gmail.com" className="text-slate-300 hover:text-secondary transition-colors">
+                  docaspousada@gmail.com
                 </a>
               </div>
               <div className="text-sm text-slate-300 flex items-center gap-2">

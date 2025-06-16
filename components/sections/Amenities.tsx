@@ -2,33 +2,57 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { 
+import {
   Wifi,
   Wind,
   Car,
-  Coffee
+  Coffee,
+  Soup,
+  Trees,
+  Users,
+  GlassWater
 } from "lucide-react";
 import { getAssetPath } from "@/lib/utils";
 
 const amenities = [
   {
+    title: "Piscina",
+    description: "Refresco com vista linda",
+    icon: <GlassWater className="w-8 h-8 text-primary" />
+  },
+  {
     title: "Wi-Fi",
-    description: "Internet de alta velocidade",
+    description: "Internet rápida e estável",
     icon: <Wifi className="w-8 h-8 text-primary" />
   },
   {
-    title: "Ar Condicionado",
-    description: "Em todos os quartos",
-    icon: <Wind className="w-8 h-8 text-primary" />
-  },
-  {
     title: "Estacionamento",
-    description: "Gratuito e seguro",
+    description: "Grátis e seguro",
     icon: <Car className="w-8 h-8 text-primary" />
   },
   {
+    title: "Ar-condicionado",
+    description: "Conforto em todos quartos",
+    icon: <Wind className="w-8 h-8 text-primary" />
+  },
+  {
+    title: "Espaço para Eventos",
+    description: "Ideal para celebrar momentos",
+    icon: <Users className="w-8 h-8 text-primary" />
+  },
+  {
+    title: "Cozinha Equipada",
+    description: "Estrutura pra você cozinhar e curtir",
+    icon: <Soup className="w-8 h-8 text-primary" />
+  },
+  {
+    title: "Jardins",
+    description: "Verde por todos lados",
+    icon: <Trees className="w-8 h-8 text-primary" />
+  },
+  {
     title: "Café da Manhã",
-    description: "Buffet completo",
+    description: "Combinado com parceiros",
     icon: <Coffee className="w-8 h-8 text-primary" />
   }
 ];
@@ -74,36 +98,6 @@ export default function Amenities() {
         </div>
 
         <div className="mt-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            className="relative overflow-hidden rounded-xl shadow-xl"
-          >
-            <Image
-              src={getAssetPath('/assets/nature-house.webp')}
-              alt="Vista panorâmica da pousada"
-              width={1200}
-              height={400}
-              className="w-full h-[300px] md:h-[400px] object-cover"
-              loading="lazy"
-            />
-            
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-end">
-              <div className="p-6 md:p-10 text-white max-w-3xl">
-                <h3 className="text-2xl md:text-3xl font-medium mb-3">
-                  Contato com a Natureza
-                </h3>
-                <p className="text-white/90">
-                  Nossa pousada está situada em uma área privilegiada, onde você poderá desfrutar
-                  de paisagens deslumbrantes, ar puro e total tranquilidade. O local ideal para
-                  quem busca se reconectar com a natureza sem abrir mão do conforto.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

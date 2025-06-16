@@ -39,10 +39,10 @@ const ContactInfo = () => (
         <div>
           <h4 className="font-medium text-slate-900">E-mail</h4>
           <a
-            href="mailto:contato@pousadadocas.com.br"
+            href="mailto:docaspousada@gmail.com"
             className="text-sm text-slate-600 hover:text-primary transition-colors"
           >
-            contato@pousadadocas.com.br
+            docaspousada@gmail.com
           </a>
         </div>
       </div>

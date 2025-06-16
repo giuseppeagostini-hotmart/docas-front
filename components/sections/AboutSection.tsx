@@ -20,35 +20,29 @@ export default function AboutSection() {
               Bem-vindo à <span className="text-gradient">Pousada Docas</span>
             </h2>
             <p className="text-slate-700 mb-4">
-              Localizada em uma charmosa cidade mineira, a apenas 2 horas de Belo Horizonte, 
-              a Pousada Docas oferece o refúgio perfeito para aqueles que buscam 
-              tranquilidade sem abrir mão do conforto.
+              Escondidinha numa charmosa cidade mineira, a apenas 2 horas de Belo Horizonte, 30 minutos de Pitangui e 40 minutos de Divinópolis, a Pousada Docas é o refúgio perfeito para quem busca tranquilidade, conforto e aquele jeitinho mineiro de receber.
             </p>
             <p className="text-slate-700 mb-4">
-              Em meio à exuberante natureza de Minas Gerais, nossa pousada combina a 
-              hospitalidade mineira com uma estrutura completa, proporcionando momentos 
-              inesquecíveis para casais, famílias e grupos de amigos.
+              Aqui, em meio à natureza exuberante de Minas Gerais, juntamos a hospitalidade de raiz com uma estrutura completa para receber casais, famílias e grupos de amigos, sempre com muita simplicidade e cuidado.
             </p>
             <p className="text-slate-700 mb-6">
-              Seja para um final de semana relaxante, férias prolongadas ou para 
-              celebrar um evento especial, a Pousada Docas é o lugar ideal para 
-              você criar memórias que durarão para sempre.
+              Seja para um fim de semana de descanso, férias prolongadas ou para celebrar momentos especiais, nossa pousada é o cantinho ideal para criar memórias que vão ficar no coração.
             </p>
-            
+
             <div className="flex flex-wrap gap-4 mt-8">
               <Button onClick={() => window.open(getWhatsAppLink(), "_blank")}>
                 Faça sua Reserva
               </Button>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 onClick={() => document.getElementById("acomodacoes")?.scrollIntoView({ behavior: "smooth" })}
               >
                 Ver Acomodações
               </Button>
             </div>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className="relative"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}

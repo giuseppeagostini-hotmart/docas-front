@@ -12,7 +12,6 @@ const navLinks = [
   { name: "Sobre", href: "#sobre" },
   { name: "Acomodações", href: "#acomodacoes" },
   { name: "Estrutura", href: "#estrutura" },
-  { name: "Galeria", href: "#galeria" },
   { name: "Eventos", href: "#eventos" },
   { name: "Localização", href: "#localizacao" },
   { name: "Contato", href: "#contato" },
