@@ -76,25 +76,62 @@ function ReviewCard({ name, comment, highlights }: Testimonial) {
 
 export default function TestimonialsSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
-    initial: 0,
-    slideChanged(s) {
-      setCurrentSlide(s.track.details.rel);
-    },
-    loop: true,
-    slides: {
-      perView: 1,
-      spacing: 24,
-    },
-    breakpoints: {
-      "(min-width: 768px)": {
-        slides: { perView: 2, spacing: 24 }
+  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
+    {
+      initial: 0,
+      slideChanged(s) {
+        setCurrentSlide(s.track.details.rel);
       },
-      "(min-width: 1024px)": {
-        slides: { perView: 3, spacing: 24 }
+      loop: true,
+      slides: {
+        perView: 1,
+        spacing: 24,
+      },
+      breakpoints: {
+        "(min-width: 768px)": {
+          slides: { perView: 2, spacing: 24 }
+        },
+        "(min-width: 1024px)": {
+          slides: { perView: 3, spacing: 24 }
+        }
       }
-    }
-  });
+    },
+    [
+      // Autoplay plugin
+      (slider) => {
+        let timeout: ReturnType<typeof setTimeout>;
+        let mouseOver = false;
+
+        function clearNextTimeout() {
+          clearTimeout(timeout);
+        }
+
+        function nextTimeout() {
+          clearTimeout(timeout);
+          if (mouseOver) return;
+          timeout = setTimeout(() => {
+            slider.next();
+          }, 4000); // 4 seconds
+        }
+
+        slider.on("created", () => {
+          slider.container.addEventListener("mouseover", () => {
+            mouseOver = true;
+            clearNextTimeout();
+          });
+          slider.container.addEventListener("mouseout", () => {
+            mouseOver = false;
+            nextTimeout();
+          });
+          nextTimeout();
+        });
+
+        slider.on("dragStarted", clearNextTimeout);
+        slider.on("animationEnded", nextTimeout);
+        slider.on("updated", nextTimeout);
+      }
+    ]
+  );
 
   return (
     <section className="py-16 bg-background">
