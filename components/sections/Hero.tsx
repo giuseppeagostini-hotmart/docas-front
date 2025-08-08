@@ -83,7 +83,7 @@ export default function Hero() {
             }
           }}
         >
-          <FaChevronDown className="text-white w-8 h-8 sm:w-10 sm:h-10 drop-shadow-lg" />
+          <FaChevronDown className="text-white w-6 h-6 drop-shadow-lg" />
         </motion.div>
       </div>
     </section>

@@ -94,7 +94,7 @@ export default function Footer() {
                   <FaWhatsapp size={20} />
                 </Link>
                 <Link
-                  href="https://www.tiktok.com/@pousadadocas?_t=ZM-8yi6M6bLojY&_r=1"
+                  href="https://www.tiktok.com/@pousadadocas"
                   target="_blank"
                   rel="noreferrer"
                   className="text-slate-300 hover:text-secondary transition-colors"

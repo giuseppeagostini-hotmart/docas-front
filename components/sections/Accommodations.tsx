@@ -1,11 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { getWhatsAppLink, getAssetPath } from "@/lib/utils";
 import { FaBed, FaUsers, FaBath, FaSnowflake, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
 
 const accommodations = [
   {
@@ -61,6 +63,25 @@ const accommodations = [
 export default function Accommodations() {
   const [selectedRoom, setSelectedRoom] = useState(accommodations[0]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
+    initial: 0,
+    slideChanged(slider) {
+      setCurrentImageIndex(slider.track.details.rel);
+    },
+    loop: true,
+    rubberband: true,
+    mode: "free-snap",
+    slides: {
+      perView: 1,
+      spacing: 0,
+    },
+  });
+
+  useEffect(() => {
+    setCurrentImageIndex(0);
+    instanceRef.current?.update();
+    instanceRef.current?.moveToIdx(0);
+  }, [selectedRoom, instanceRef]);
 
   return (
     <section id="acomodacoes" className="py-12 sm:py-15 bg-white">
@@ -119,42 +140,44 @@ export default function Accommodations() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <div className="relative rounded-lg overflow-hidden shadow-lg h-[300px] sm:h-[400px] md:h-[500px]">
-              <Image
-                src={getAssetPath(selectedRoom.images[currentImageIndex])}
-                alt={selectedRoom.name}
-                fill
-                className="object-cover"
-                loading="lazy"
-              />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent h-1/3"></div>
-              
-              {/* Image navigation arrows - igual ao EventsSection */}
-              <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between px-4">
+            <div ref={sliderRef} key={selectedRoom.id} className="keen-slider relative rounded-lg overflow-hidden shadow-lg h-[300px] sm:h-[400px] md:h-[545px]">
+              {selectedRoom.images.map((img, idx) => (
+                <div key={idx} className="keen-slider__slide relative w-full !min-w-full">
+                  <Image
+                    src={getAssetPath(img)}
+                    alt={`${selectedRoom.name} - imagem ${idx + 1}`}
+                    fill
+                    className="object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent h-1/3" />
+                </div>
+              ))}
+
+              {/* Image navigation arrows */}
+              <div className="pointer-events-none absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between px-4">
                 <button
-                  onClick={() => setCurrentImageIndex((prev) => (prev === 0 ? selectedRoom.images.length - 1 : prev - 1))}
-                  className="w-10 h-10 rounded-full flex items-center justify-center text-slate-200 transition-all hover:scale-110 shadow-lg"
+                  onClick={() => instanceRef.current?.prev()}
+                  className="pointer-events-auto w-10 h-10 rounded-full flex items-center justify-center text-slate-200 transition-all hover:scale-110 shadow-lg"
                   aria-label="Imagem anterior"
                 >
                   <FaChevronLeft size={24} />
                 </button>
                 <button
-                  onClick={() => setCurrentImageIndex((prev) => (prev === selectedRoom.images.length - 1 ? 0 : prev + 1))}
-                  className="w-10 h-10 rounded-full flex items-center justify-center text-slate-200 transition-all hover:scale-110 shadow-lg"
+                  onClick={() => instanceRef.current?.next()}
+                  className="pointer-events-auto w-10 h-10 rounded-full flex items-center justify-center text-slate-200 transition-all hover:scale-110 shadow-lg"
                   aria-label="Próxima imagem"
                 >
                   <FaChevronRight size={24} />
                 </button>
               </div>
-              
-              
             </div>
             {/* Image indicators (igual ao EventsSection) */}
             <div className="flex justify-center mt-4 gap-2">
               {selectedRoom.images.map((_, index) => (
                 <button
                   key={index}
-                  onClick={() => setCurrentImageIndex(index)}
+                  onClick={() => instanceRef.current?.moveToIdx(index)}
                   className={`h-1.5 rounded-full transition-all ${
                     index === currentImageIndex
                       ? "w-6 bg-primary"

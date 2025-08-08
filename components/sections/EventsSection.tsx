@@ -1,10 +1,12 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { getAssetPath } from "@/lib/utils";
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
 
 interface Event {
   id: number;
@@ -53,14 +55,19 @@ const EventCard = ({ event }: { event: Event }) => (
 
 export default function EventsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextSlide = useCallback(() => {
-    setCurrentIndex(prev => (prev + 1) % EVENTS.length);
-  }, []);
-
-  const prevSlide = useCallback(() => {
-    setCurrentIndex(prev => (prev - 1 + EVENTS.length) % EVENTS.length);
-  }, []);
+  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
+    initial: 0,
+    slideChanged(slider) {
+      setCurrentIndex(slider.track.details.rel);
+    },
+    loop: true,
+    rubberband: true,
+    mode: "free-snap",
+    slides: {
+      perView: 1,
+      spacing: 0,
+    },
+  });
 
   return (
     <section className="py-12 sm:py-15 bg-white" id="eventos">
@@ -81,29 +88,24 @@ export default function EventsSection() {
         </motion.div>
 
         <div className="relative px-4 sm:px-0">
-          <div className="overflow-hidden">
-            <div 
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-            >
-              {EVENTS.map((event) => (
-                <div key={event.id} className="w-full flex-shrink-0">
-                  <EventCard event={event} />
-                </div>
-              ))}
-            </div>
+          <div ref={sliderRef} className="keen-slider">
+            {EVENTS.map((event) => (
+              <div key={event.id} className="keen-slider__slide">
+                <EventCard event={event} />
+              </div>
+            ))}
           </div>
 
           <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between px-4">
             <button
-              onClick={prevSlide}
+              onClick={() => instanceRef.current?.prev()}
               className="w-10 h-10 rounded-full flex items-center justify-center text-slate-200 transition-all hover:scale-110 shadow-lg"
               aria-label="Evento anterior"
             >
               <FaChevronLeft size={24} />
             </button>
             <button
-              onClick={nextSlide}
+              onClick={() => instanceRef.current?.next()}
               className="w-10 h-10 rounded-full flex items-center justify-center text-slate-200 transition-all hover:scale-110 shadow-lg"
               aria-label="Próximo evento"
             >
@@ -115,7 +117,7 @@ export default function EventsSection() {
             {EVENTS.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setCurrentIndex(index)}
+                onClick={() => instanceRef.current?.moveToIdx(index)}
                 className={`h-1.5 rounded-full transition-all ${
                   index === currentIndex
                     ? "w-6 bg-primary"
