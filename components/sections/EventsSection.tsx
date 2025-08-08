@@ -147,7 +147,7 @@ export default function EventsSection() {
             ))}
           </div>
 
-          <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between px-4">
+          <div className="absolute top-1/2 -translate-y-1/2 left-3 right-3 sm:left-4 sm:right-4 z-10 flex justify-between mx-4">
             <button
               onClick={() => instanceRef.current?.prev()}
               className="w-10 h-10 rounded-full flex items-center justify-center text-slate-200 transition-all hover:scale-110 shadow-lg"
@@ -212,7 +212,7 @@ export default function EventsSection() {
                 </div>
               ))}
               {imagesForSelectedEvent.length > 1 && (
-                <div className="pointer-events-none absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between px-4">
+                <div className="pointer-events-none absolute top-1/2 -translate-y-1/2 left-3 right-3 sm:left-4 sm:right-4 flex justify-between">
                   <button
                     onClick={() => modalInstanceRef.current?.prev()}
                     className="pointer-events-auto w-10 h-10 rounded-full flex items-center justify-center text-white/90 bg-black/40 hover:bg-black/60 transition-all hover:scale-110 shadow-lg"
