@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Instagram, Mail, Phone, MapPin } from "lucide-react";
-import { formatPhoneNumber, getAssetPath } from "@/lib/utils";
+import { Instagram, Mail, Phone, MapPin, MessageCircle, Music } from "lucide-react";
+import { formatPhoneNumber, getAssetPath, getWhatsAppLink } from "@/lib/utils";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,21 +11,21 @@ export default function Footer() {
       <div className="container-custom">
         <div className="flex flex-col gap-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-            <div className="flex flex-col items-center md:items-start">
+            <div className="flex flex-row sm:flex-col items-center sm:items-start gap-4">
               <Image
                 src={getAssetPath("/assets/docas-logo-comp.webp")}
                 alt="Pousada Docas"
                 width={80}
                 height={80}
-                className="mb-4"
+                className=""
                 loading="lazy"
               />
-              <p className="text-slate-300 text-sm text-center md:text-left">
+              <p className="text-slate-300 text-sm text-left mb-0">
                 Uma pousada aconchegante em Minas Gerais, cercada pela natureza.
               </p>
             </div>
 
-            <div className="flex flex-col items-center md:items-start gap-3">
+            <div className="flex flex-col items-start gap-3">
               <div className="text-sm text-slate-300 flex items-center gap-2">
                 <Phone size={16} />
                 <a href={`tel:+5537988513237`} className="text-slate-300 hover:text-secondary transition-colors">
@@ -74,15 +74,35 @@ export default function Footer() {
                   </li>
                 </ul>
               </nav>
-              <Link 
-                href="https://instagram.com/pousadadocas" 
-                target="_blank"
-                rel="noreferrer"
-                className="text-slate-300 hover:text-secondary transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram size={20} />
-              </Link>
+              <div className="flex items-center gap-3">
+                <Link 
+                  href="https://instagram.com/pousadadocas" 
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-slate-300 hover:text-secondary transition-colors"
+                  aria-label="Instagram"
+                >
+                  <Instagram size={20} />
+                </Link>
+                <Link
+                  href={getWhatsAppLink()}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-slate-300 hover:text-secondary transition-colors"
+                  aria-label="WhatsApp"
+                >
+                  <MessageCircle size={20} />
+                </Link>
+                <Link
+                  href="https://www.tiktok.com/@pousadadocas?_t=ZM-8yi6M6bLojY&_r=1"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-slate-300 hover:text-secondary transition-colors"
+                  aria-label="TikTok"
+                >
+                  <Music size={20} />
+                </Link>
+              </div>
             </div>
           </div>
 

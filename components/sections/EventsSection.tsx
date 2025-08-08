@@ -4,7 +4,6 @@ import { useState, useCallback } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { getAssetPath } from "@/lib/utils";
 
 interface Event {
@@ -46,11 +45,8 @@ const EventCard = ({ event }: { event: Event }) => (
     />
     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
     <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 text-white">
-      <h3 className="text-2xl sm:text-3xl font-medium mb-3">{event.title}</h3>
+      <h3 className="text-2xl sm:text-3xl mb-3 text-slate-200 font-bold">{event.title}</h3>
       <p className="text-slate-200 text-sm sm:text-base mb-6">{event.description}</p>
-      <Button variant="secondary" size="lg">
-        Saiba Mais
-      </Button>
     </div>
   </div>
 );
@@ -67,7 +63,7 @@ export default function EventsSection() {
   }, []);
 
   return (
-    <section className="py-12 sm:py-20 bg-white" id="eventos">
+    <section className="py-12 sm:py-15 bg-white" id="eventos">
       <div className="container-custom">
         <motion.div
           className="text-center max-w-3xl mx-auto mb-8 sm:mb-16 px-4"
@@ -101,14 +97,14 @@ export default function EventsSection() {
           <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between px-4">
             <button
               onClick={prevSlide}
-              className="w-10 h-10 rounded-full bg-white/90 hover:bg-white flex items-center justify-center text-slate-700 transition-all hover:scale-110 shadow-lg"
+              className="w-10 h-10 rounded-full flex items-center justify-center text-slate-200 transition-all hover:scale-110 shadow-lg"
               aria-label="Evento anterior"
             >
               <ChevronLeft size={24} />
             </button>
             <button
               onClick={nextSlide}
-              className="w-10 h-10 rounded-full bg-white/90 hover:bg-white flex items-center justify-center text-slate-700 transition-all hover:scale-110 shadow-lg"
+              className="w-10 h-10 rounded-full flex items-center justify-center text-slate-200 transition-all hover:scale-110 shadow-lg"
               aria-label="Próximo evento"
             >
               <ChevronRight size={24} />

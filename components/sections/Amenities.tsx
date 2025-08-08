@@ -3,28 +3,14 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
-  Wifi,
   Wind,
   Car,
   Coffee,
   Soup,
-  Trees,
-  Users,
-  GlassWater
 } from "lucide-react";
 import { getAssetPath } from "@/lib/utils";
 
 const amenities = [
-  {
-    title: "Piscina",
-    description: "Refresco com vista linda",
-    icon: <GlassWater className="w-8 h-8 text-primary" />
-  },
-  {
-    title: "Wi-Fi",
-    description: "Internet rápida e estável",
-    icon: <Wifi className="w-8 h-8 text-primary" />
-  },
   {
     title: "Estacionamento",
     description: "Grátis e seguro",
@@ -36,19 +22,9 @@ const amenities = [
     icon: <Wind className="w-8 h-8 text-primary" />
   },
   {
-    title: "Espaço para Eventos",
-    description: "Ideal para celebrar momentos",
-    icon: <Users className="w-8 h-8 text-primary" />
-  },
-  {
     title: "Cozinha Equipada",
     description: "Estrutura pra você cozinhar e curtir",
     icon: <Soup className="w-8 h-8 text-primary" />
-  },
-  {
-    title: "Jardins",
-    description: "Verde por todos lados",
-    icon: <Trees className="w-8 h-8 text-primary" />
   },
   {
     title: "Café da Manhã",
@@ -59,7 +35,7 @@ const amenities = [
 
 export default function Amenities() {
   return (
-    <section id="estrutura" className="py-20 bg-background">
+    <section id="estrutura" className="py-15 bg-background">
       <div className="container-custom">
         <motion.div
           className="text-center max-w-3xl mx-auto mb-16"

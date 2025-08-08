@@ -94,7 +94,7 @@ export default function FaqSection() {
 	};
 
 	return (
-		<section id="faq" className="py-20 relative overflow-hidden">
+		<section id="faq" className="py-15 relative overflow-hidden">
 			{/* Background Decorations */}
 			<div className="absolute inset-0 bg-gradient-to-b from-background via-white to-background" />
 			<div className="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl" />
@@ -135,7 +135,7 @@ export default function FaqSection() {
 								onClick={() => toggleFaq(index)}
 							>
 								<h3
-									className={`text-lg font-medium transition-colors duration-200 ${
+									className={`text-lg font-medium transition-colors duration-200 mr-2 ${
 										activeIndex === index
 											? "text-primary"
 											: "text-slate-900"

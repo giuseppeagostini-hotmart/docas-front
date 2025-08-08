@@ -6,7 +6,7 @@ import { MapPin } from "lucide-react";
 
 export default function LocationSection() {
   return (
-    <section id="localizacao" className="py-20 bg-white">
+    <section id="localizacao" className="py-15 bg-white">
       <div className="container-custom">
         <motion.div
           className="text-center max-w-3xl mx-auto mb-16"

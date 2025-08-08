@@ -7,7 +7,7 @@ import { getAssetPath, getWhatsAppLink } from "@/lib/utils";
 
 export default function AboutSection() {
   return (
-    <section id="sobre" className="py-20 bg-background">
+    <section id="sobre" className="py-15 bg-background">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
