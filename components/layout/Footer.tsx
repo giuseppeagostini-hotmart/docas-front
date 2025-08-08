@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Instagram, Mail, Phone, MapPin, MessageCircle, Music } from "lucide-react";
+import { FaInstagram, FaEnvelope, FaPhone, FaMapMarkerAlt, FaWhatsapp, FaTiktok } from "react-icons/fa";
 import { formatPhoneNumber, getAssetPath, getWhatsAppLink } from "@/lib/utils";
 
 export default function Footer() {
@@ -27,19 +27,19 @@ export default function Footer() {
 
             <div className="flex flex-col items-start gap-3">
               <div className="text-sm text-slate-300 flex items-center gap-2">
-                <Phone size={16} />
+                <FaPhone size={16} />
                 <a href={`tel:+5537988513237`} className="text-slate-300 hover:text-secondary transition-colors">
                   {formatPhoneNumber("37988513237")}
                 </a>
               </div>
               <div className="text-sm text-slate-300 flex items-center gap-2">
-                <Mail size={16} />
+                <FaEnvelope size={16} />
                 <a href="mailto:docaspousada@gmail.com" className="text-slate-300 hover:text-secondary transition-colors">
                   docaspousada@gmail.com
                 </a>
               </div>
               <div className="text-sm text-slate-300 flex items-center gap-2">
-                <MapPin size={16} className="flex-shrink-0" />
+                <FaMapMarkerAlt size={16} className="flex-shrink-0" />
                 <span>R. Profa. Cecília de Freitas Lobato, 486, Leandro Ferreira - MG, 35657-000</span>
               </div>
             </div>
@@ -82,7 +82,7 @@ export default function Footer() {
                   className="text-slate-300 hover:text-secondary transition-colors"
                   aria-label="Instagram"
                 >
-                  <Instagram size={20} />
+                  <FaInstagram size={20} />
                 </Link>
                 <Link
                   href={getWhatsAppLink()}
@@ -91,7 +91,7 @@ export default function Footer() {
                   className="text-slate-300 hover:text-secondary transition-colors"
                   aria-label="WhatsApp"
                 >
-                  <MessageCircle size={20} />
+                  <FaWhatsapp size={20} />
                 </Link>
                 <Link
                   href="https://www.tiktok.com/@pousadadocas?_t=ZM-8yi6M6bLojY&_r=1"
@@ -100,7 +100,7 @@ export default function Footer() {
                   className="text-slate-300 hover:text-secondary transition-colors"
                   aria-label="TikTok"
                 >
-                  <Music size={20} />
+                  <FaTiktok size={20} />
                 </Link>
               </div>
             </div>

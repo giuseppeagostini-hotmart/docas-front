@@ -2,34 +2,29 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import {
-  Wind,
-  Car,
-  Coffee,
-  Soup,
-} from "lucide-react";
+import { FaWind, FaCar, FaCoffee, FaUtensils } from "react-icons/fa";
 import { getAssetPath } from "@/lib/utils";
 
 const amenities = [
   {
     title: "Estacionamento",
     description: "Grátis e seguro",
-    icon: <Car className="w-8 h-8 text-primary" />
+    icon: <FaCar className="w-8 h-8 text-primary" />
   },
   {
     title: "Ar-condicionado",
     description: "Conforto em todos quartos",
-    icon: <Wind className="w-8 h-8 text-primary" />
+    icon: <FaWind className="w-8 h-8 text-primary" />
   },
   {
     title: "Cozinha Equipada",
     description: "Estrutura pra você cozinhar e curtir",
-    icon: <Soup className="w-8 h-8 text-primary" />
+    icon: <FaUtensils className="w-8 h-8 text-primary" />
   },
   {
     title: "Café da Manhã",
     description: "Combinado com parceiros",
-    icon: <Coffee className="w-8 h-8 text-primary" />
+    icon: <FaCoffee className="w-8 h-8 text-primary" />
   }
 ];
 

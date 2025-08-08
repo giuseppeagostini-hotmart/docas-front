@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { getWhatsAppLink, getAssetPath } from "@/lib/utils";
-import { Bed, Users, Bath, Snowflake, ChevronLeft, ChevronRight } from "lucide-react";
+import { FaBed, FaUsers, FaBath, FaSnowflake, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const accommodations = [
   {
@@ -98,7 +98,7 @@ export default function Accommodations() {
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <Bed size={20} className={selectedRoom.id === room.id ? "text-white" : "text-primary"} />
+                  <FaBed size={20} className={selectedRoom.id === room.id ? "text-white" : "text-primary"} />
                   <div className="flex flex-col items-start">
                     <span className="font-medium">{room.name}</span>
                   </div>
@@ -136,14 +136,14 @@ export default function Accommodations() {
                   className="w-10 h-10 rounded-full flex items-center justify-center text-slate-200 transition-all hover:scale-110 shadow-lg"
                   aria-label="Imagem anterior"
                 >
-                  <ChevronLeft size={24} />
+                  <FaChevronLeft size={24} />
                 </button>
                 <button
                   onClick={() => setCurrentImageIndex((prev) => (prev === selectedRoom.images.length - 1 ? 0 : prev + 1))}
                   className="w-10 h-10 rounded-full flex items-center justify-center text-slate-200 transition-all hover:scale-110 shadow-lg"
                   aria-label="Próxima imagem"
                 >
-                  <ChevronRight size={24} />
+                  <FaChevronRight size={24} />
                 </button>
               </div>
               
@@ -171,22 +171,22 @@ export default function Accommodations() {
               
               <div className="grid grid-cols-2 gap-2 mb-6 sm:mb-8">
                 <div className="flex items-center gap-2">
-                  <Bed className="text-primary flex-shrink-0" size={16} />
+                  <FaBed className="text-primary flex-shrink-0" size={16} />
                   <span className="text-slate-700 text-sm sm:text-base">{selectedRoom.bedType}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Users className="text-primary flex-shrink-0" size={16} />
+                  <FaUsers className="text-primary flex-shrink-0" size={16} />
                   <span className="text-slate-700 text-sm sm:text-base">Até {selectedRoom.capacity} pessoas</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Bath className="text-primary flex-shrink-0" size={16} />
+                  <FaBath className="text-primary flex-shrink-0" size={16} />
                   <span className="text-slate-700 text-sm sm:text-base">Banheiro privativo</span>
                 </div>
                 <div className="flex items-center gap-2">
                   {selectedRoom.hasAC ? (
-                    <Snowflake className="text-primary flex-shrink-0" size={16} />
+                    <FaSnowflake className="text-primary flex-shrink-0" size={16} />
                   ) : (
-                    <Snowflake className="text-slate-400 flex-shrink-0" size={16} />
+                    <FaSnowflake className="text-slate-400 flex-shrink-0" size={16} />
                   )}
                   <span className={`text-sm sm:text-base ${selectedRoom.hasAC ? "text-slate-700" : "text-slate-400"}`}>
                     {selectedRoom.hasAC ? "Ar-condicionado" : "Sem ar-condicionado"}
@@ -235,7 +235,7 @@ export default function Accommodations() {
                     <div className="flex items-center justify-between">
                       <h4 className="font-medium text-sm sm:text-base">{room.name}</h4>
                       <div className="flex items-center gap-2">
-                        <Bed className="text-primary" size={16} />
+                        <FaBed className="text-primary" size={16} />
                         <span className="text-xs sm:text-sm text-slate-600">{room.capacity}</span>
                       </div>
                     </div>

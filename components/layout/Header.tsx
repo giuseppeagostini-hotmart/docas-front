@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { getWhatsAppLink, getAssetPath } from "@/lib/utils";
 
@@ -90,9 +90,9 @@ export default function Header() {
             aria-label="Toggle Menu"
           >
             {isOpen ? (
-              <X className="!text-slate-800" />
+              <FaTimes className="!text-slate-800" />
             ) : (
-              <Menu className={`${isScrolled ? "text-slate-800" : "text-white"}`} />
+              <FaBars className={`${isScrolled ? "text-slate-800" : "text-white"}`} />
             )}
           </button>
         </div>

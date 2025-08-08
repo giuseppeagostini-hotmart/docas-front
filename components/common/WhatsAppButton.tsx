@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { MessageCircle } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { getWhatsAppLink } from "@/lib/utils";
 
 export default function WhatsAppButton() {
@@ -30,7 +30,7 @@ export default function WhatsAppButton() {
       }`}
       aria-label="Contato via WhatsApp"
     >
-      <MessageCircle size={24} />
+      <FaWhatsapp size={24} />
     </a>
   );
 }

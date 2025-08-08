@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { FaChevronDown } from "react-icons/fa";
 import { getAssetPath } from "@/lib/utils";
 
 export default function Hero() {
@@ -83,7 +83,7 @@ export default function Hero() {
             }
           }}
         >
-          <ChevronDown className="text-white w-8 h-8 sm:w-10 sm:h-10 drop-shadow-lg" />
+          <FaChevronDown className="text-white w-8 h-8 sm:w-10 sm:h-10 drop-shadow-lg" />
         </motion.div>
       </div>
     </section>

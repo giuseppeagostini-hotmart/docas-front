@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { FaStar, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 
@@ -47,7 +47,7 @@ function ReviewCard({ name, comment, highlights }: Testimonial) {
         <h4 className="font-semibold text-lg">{name}</h4>
         <div className="flex gap-1">
           {Array.from({ length: 5 }, (_, i) => (
-            <Star
+            <FaStar
               key={i}
               size={16}
               className="fill-yellow-400 text-yellow-400"
@@ -166,7 +166,7 @@ export default function TestimonialsSection() {
               className="p-2 rounded-full bg-white border shadow hover:bg-gray-50 transition-colors"
               onClick={() => instanceRef.current?.prev()}
             >
-              <ChevronLeft size={20} />
+              <FaChevronLeft size={20} />
             </button>
             
             <div className="flex gap-2">
@@ -185,7 +185,7 @@ export default function TestimonialsSection() {
               className="p-2 rounded-full bg-white border shadow hover:bg-gray-50 transition-colors"
               onClick={() => instanceRef.current?.next()}
             >
-              <ChevronRight size={20} />
+              <FaChevronRight size={20} />
             </button>
           </div>
         </div>

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { MapPin } from "lucide-react";
+import { FaMapMarkerAlt } from "react-icons/fa";
 
 export default function LocationSection() {
   return (
@@ -59,7 +59,7 @@ export default function LocationSection() {
               
               <div className="space-y-8">
                 <div className="flex">
-                  <MapPin className="text-primary flex-shrink-0 mr-4 mt-1" size={24} />
+                  <FaMapMarkerAlt className="text-primary flex-shrink-0 mr-4 mt-1" size={24} />
                   <div>
                     <h4 className="font-medium text-slate-900 mb-2">Endereço</h4>
                     <p className="text-slate-700">

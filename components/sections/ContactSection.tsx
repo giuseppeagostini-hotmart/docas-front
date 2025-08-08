@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone } from "lucide-react";
+import { FaEnvelope, FaPhone } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { formatPhoneNumber, getWhatsAppLink } from "@/lib/utils";
 
@@ -11,7 +11,7 @@ const ContactInfo = () => (
     <div className="flex flex-col sm:flex-row mb-6 gap-4">
       <div className="flex items-start gap-2">
         <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
-          <Phone className="text-primary" size={20} />
+          <FaPhone className="text-primary" size={20} />
         </div>
         <div className="flex-1 min-w-0">
           <h4 className="font-medium text-slate-900">Telefone</h4>
@@ -26,7 +26,7 @@ const ContactInfo = () => (
 
       <div className="flex items-start gap-2">
         <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
-          <Mail className="text-primary" size={20} />
+          <FaEnvelope className="text-primary" size={20} />
         </div>
         <div className="flex-1 min-w-0">
           <h4 className="font-medium text-slate-900">E-mail</h4>

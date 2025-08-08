@@ -3,7 +3,7 @@
 import { useState, useCallback } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { getAssetPath } from "@/lib/utils";
 
 interface Event {
@@ -100,14 +100,14 @@ export default function EventsSection() {
               className="w-10 h-10 rounded-full flex items-center justify-center text-slate-200 transition-all hover:scale-110 shadow-lg"
               aria-label="Evento anterior"
             >
-              <ChevronLeft size={24} />
+              <FaChevronLeft size={24} />
             </button>
             <button
               onClick={nextSlide}
               className="w-10 h-10 rounded-full flex items-center justify-center text-slate-200 transition-all hover:scale-110 shadow-lg"
               aria-label="Próximo evento"
             >
-              <ChevronRight size={24} />
+              <FaChevronRight size={24} />
             </button>
           </div>
 
