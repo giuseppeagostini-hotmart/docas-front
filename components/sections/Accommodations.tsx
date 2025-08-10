@@ -12,15 +12,15 @@ import "keen-slider/keen-slider.min.css";
 const accommodations = [
   {
     id: 1,
-    name: "Suíte de 3 Camas",
+    name: "Casa Inteira + Chalé",
     description:
-      "Suíte espaçosa com três camas de solteiro, ideal para grupos de amigos ou famílias pequenas. Conta com banheiro privativo e varanda com vista para o jardim.",
+      "Nossa casa principal mais quatro quartos no chalé.",
     images: [
       "/assets/nature-house.webp",
       "/assets/nature-house.webp",
       "/assets/nature-house.webp",
     ],
-    capacity: 3,
+    capacity: 31,
     bedType: "3 Camas de Solteiro",
     hasAC: true,
     hasWifi: true,
@@ -28,15 +28,15 @@ const accommodations = [
   },
   {
     id: 2,
-    name: "Suíte de 5 Camas",
+    name: "Casa Inteira",
     description:
-      "Nossa maior suíte, perfeita para grupos grandes ou famílias. Equipada com cinco camas de solteiro, amplo espaço de convivência e banheiro privativo.",
+      "Nossa casa principal com 7 suites comporta 20 pessoas.",
     images: [
       "/assets/nature-house.webp",
       "/assets/nature-house.webp",
       "/assets/nature-house.webp",
     ],
-    capacity: 5,
+    capacity: 20,
     bedType: "5 Camas de Solteiro",
     hasAC: true,
     hasWifi: true,
@@ -44,15 +44,15 @@ const accommodations = [
   },
   {
     id: 3,
-    name: "Suíte de 3 Camas",
+    name: "Suítes",
     description:
-      "Suíte confortável com três camas de solteiro, ideal para pequenos grupos. Ambiente acolhedor com banheiro privativo e todas as comodidades necessárias.",
+      "10 Suítes confortaveis prontas para hospedar voce e sua familia.",
     images: [
       "/assets/nature-house.webp",
       "/assets/nature-house.webp",
       "/assets/nature-house.webp",
     ],
-    capacity: 3,
+    capacity: 2,
     bedType: "3 Camas de Solteiro",
     hasAC: true,
     hasWifi: true,
@@ -194,7 +194,7 @@ export default function Accommodations() {
               
               <div className="grid grid-cols-2 gap-2 mb-6 sm:mb-8">
                 <div className="flex items-center gap-2">
-                  <FaBed className="text-primary flex-shrink-0" size={16} />
+                  <FaUsers className="text-primary flex-shrink-0" size={16} />
                   <span className="text-slate-700 text-sm sm:text-base">{selectedRoom.bedType}</span>
                 </div>
                 <div className="flex items-center gap-2">
@@ -258,7 +258,7 @@ export default function Accommodations() {
                     <div className="flex items-center justify-between">
                       <h4 className="font-medium text-sm sm:text-base">{room.name}</h4>
                       <div className="flex items-center gap-2">
-                        <FaBed className="text-primary" size={16} />
+                        <FaUsers className="text-primary" size={16} />
                         <span className="text-xs sm:text-sm text-slate-600">{room.capacity}</span>
                       </div>
                     </div>

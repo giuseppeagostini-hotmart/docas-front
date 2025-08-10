@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaMapMarkerAlt, FaPhone } from "react-icons/fa";
+import { formatPhoneNumber } from "@/lib/utils";
 
 export default function LocationSection() {
   return (
@@ -53,10 +54,6 @@ export default function LocationSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="bg-white p-8 rounded-lg shadow-soft h-full">
-              <h3 className="text-xl font-medium mb-6 border-b border-slate-200 pb-4">
-                Como Chegar
-              </h3>
-              
               <div className="space-y-8">
                 <div className="flex">
                   <FaMapMarkerAlt className="text-primary flex-shrink-0 mr-4 mt-1" size={24} />
@@ -67,6 +64,19 @@ export default function LocationSection() {
                       Leandro Ferreira - MG<br />
                       CEP: 35657-000
                     </p>
+                  </div>
+                </div>
+
+                <div className="flex">
+                  <FaPhone className="text-primary flex-shrink-0 mr-4 mt-1" size={24} />
+                  <div>
+                    <h4 className="font-medium text-slate-900 mb-2">Telefone</h4>
+                    <a
+                      href={`tel:+5537988513237`}
+                      className="text-slate-700 hover:text-primary transition-colors"
+                    >
+                      {formatPhoneNumber("37988513237")}
+                    </a>
                   </div>
                 </div>
               </div>
