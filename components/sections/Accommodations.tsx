@@ -14,14 +14,15 @@ const accommodations = [
     id: 1,
     name: "Casa Inteira + Chalé",
     description:
-      "Nossa casa principal mais quatro quartos no chalé.",
+      "Locação completa da casa principal somada ao chalé – ideal para grupos e eventos (até 31 pessoas).",
     images: [
       "/assets/nature-house.webp",
       "/assets/nature-house.webp",
       "/assets/nature-house.webp",
     ],
     capacity: 31,
-    bedType: "3 Camas de Solteiro",
+    bedType: "Casa principal + chalé",
+    capacityLabel: "Até 31 pessoas",
     hasAC: true,
     hasWifi: true,
     amenities: ["Varanda", "Mini frigobar", "TV 32\"", "Mesa de trabalho"],
@@ -30,14 +31,15 @@ const accommodations = [
     id: 2,
     name: "Casa Inteira",
     description:
-      "Nossa casa principal com 7 suites comporta 20 pessoas.",
+      "Locação exclusiva da casa principal com 7 suítes – ideal para famílias e grupos (até 20 pessoas).",
     images: [
       "/assets/nature-house.webp",
       "/assets/nature-house.webp",
       "/assets/nature-house.webp",
     ],
     capacity: 20,
-    bedType: "5 Camas de Solteiro",
+    bedType: "Casa principal",
+    capacityLabel: "Até 20 pessoas",
     hasAC: true,
     hasWifi: true,
     amenities: ["Área de convivência", "Mini frigobar", "TV 42\"", "Mesa de jantar"],
@@ -46,14 +48,15 @@ const accommodations = [
     id: 3,
     name: "Suítes",
     description:
-      "10 Suítes confortaveis prontas para hospedar voce e sua familia.",
+      "Suítes confortáveis para estadias individuais ou em dupla. Consulte disponibilidade para mais pessoas.",
     images: [
       "/assets/nature-house.webp",
       "/assets/nature-house.webp",
       "/assets/nature-house.webp",
     ],
     capacity: 2,
-    bedType: "3 Camas de Solteiro",
+    bedType: "Suítes avulsas",
+    capacityLabel: "2+ pessoas",
     hasAC: true,
     hasWifi: true,
     amenities: ["Área de trabalho", "Mini frigobar", "TV 32\"", "Armário amplo"],
@@ -190,16 +193,16 @@ export default function Accommodations() {
             
             <div className="mt-6 sm:mt-8 px-4 sm:px-0">
               <h3 className="text-xl sm:text-2xl font-medium mb-3 sm:mb-4">{selectedRoom.name}</h3>
-              <p className="text-slate-700 text-sm sm:text-base mb-6">{selectedRoom.description}</p>
+              <p className="text-slate-700 text-sm sm:text-base mb-6">{selectedRoom.description} Para locar, entre em contato com a pousada e consulte disponibilidade.</p>
               
               <div className="grid grid-cols-2 gap-2 mb-6 sm:mb-8">
                 <div className="flex items-center gap-2">
-                  <FaUsers className="text-primary flex-shrink-0" size={16} />
+                  <FaBed className="text-primary flex-shrink-0" size={16} />
                   <span className="text-slate-700 text-sm sm:text-base">{selectedRoom.bedType}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <FaUsers className="text-primary flex-shrink-0" size={16} />
-                  <span className="text-slate-700 text-sm sm:text-base">Até {selectedRoom.capacity} pessoas</span>
+                  <span className="text-slate-700 text-sm sm:text-base">{(selectedRoom as any).capacityLabel ?? `Até ${selectedRoom.capacity} pessoas`}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <FaBath className="text-primary flex-shrink-0" size={16} />
@@ -216,18 +219,6 @@ export default function Accommodations() {
                   </span>
                 </div>
               </div>
-              
-              <h4 className="text-base sm:text-lg font-medium mb-3">Comodidades:</h4>
-              <ul className="grid grid-cols-2 gap-2 mb-6">
-                {selectedRoom.amenities.map((amenity) => (
-                  <li key={amenity} className="flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-accent flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-sm sm:text-base">{amenity}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
           </motion.div>
           
@@ -240,7 +231,7 @@ export default function Accommodations() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg border border-slate-100">
-              <h3 className="text-lg sm:text-xl font-medium mb-4">Todas as Acomodações</h3>
+              <h3 className="text-lg sm:text-xl font-medium mb-4">Locação</h3>
               <div className="space-y-3 sm:space-y-4">
                 {accommodations.map((room) => (
                   <div 

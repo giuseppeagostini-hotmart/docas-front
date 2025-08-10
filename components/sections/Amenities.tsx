@@ -8,22 +8,22 @@ import { getAssetPath } from "@/lib/utils";
 const amenities = [
   {
     title: "Estacionamento",
-    description: "Grátis e seguro",
+    description: "Gratuito e seguro no local",
     icon: <FaCar className="w-8 h-8 text-primary" />
   },
   {
     title: "Ar-condicionado",
-    description: "Conforto em todos quartos",
+    description: "Temperatura ideal em todos os quartos",
     icon: <FaWind className="w-8 h-8 text-primary" />
   },
   {
     title: "Cozinha Equipada",
-    description: "Estrutura pra você cozinhar e curtir",
+    description: "Cozinha completa para você cozinhar e curtir",
     icon: <FaUtensils className="w-8 h-8 text-primary" />
   },
   {
     title: "Café da Manhã",
-    description: "Combinado com parceiros",
+    description: "Opcional com parceiros locais",
     icon: <FaCoffee className="w-8 h-8 text-primary" />
   }
 ];
@@ -63,7 +63,7 @@ export default function Amenities() {
                 {amenity.icon}
               </div>
               <h3 className="text-lg font-medium mb-2">{amenity.title}</h3>
-              <p className="text-sm text-slate-600">{amenity.description}</p>
+              <p className="text-sm text-slate-600 mb-0">{amenity.description}</p>
             </motion.div>
           ))}
         </div>
@@ -77,17 +77,19 @@ export default function Amenities() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="rounded-xl overflow-hidden shadow-lg"
             >
-              <Image
-                src={getAssetPath('/assets/nature-house.webp')}
-                alt="Piscina da pousada"
-                width={600}
-                height={400}
-                className="w-full h-64 object-cover"
-                loading="lazy"
-              />
+              <div className="relative w-full aspect-[14/9] md:aspect-[3/2] overflow-hidden">
+                <Image
+                  src={getAssetPath('/assets/piscina.webp')}
+                  alt="Piscina da pousada"
+                  fill
+                  className="object-cover"
+                  loading="lazy"
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                />
+              </div>
               <div className="p-4 bg-white">
                 <h4 className="text-lg font-medium mb-2">Piscina</h4>
-                <p className="text-sm text-slate-600">Relaxe em nossa piscina com vista panorâmica para as montanhas</p>
+                <p className="text-sm text-slate-600 mb-0">Relaxe e aproveite momentos de lazer com vista para a natureza ao redor</p>
               </div>
             </motion.div>
 
@@ -98,17 +100,19 @@ export default function Amenities() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="rounded-xl overflow-hidden shadow-lg"
             >
-              <Image
-                src={getAssetPath('/assets/nature-house.webp')}
-                alt="Restaurante da pousada"
-                width={600}
-                height={400}
-                className="w-full h-64 object-cover"
-                loading="lazy"
-              />
+              <div className="relative w-full aspect-[14/9] md:aspect-[3/2] overflow-hidden">
+                <Image
+                  src={getAssetPath('/assets/area-gourmet.webp')}
+                  alt="Área gourmet da pousada"
+                  fill
+                  className="object-cover"
+                  loading="lazy"
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                />
+              </div>
               <div className="p-4 bg-white">
-                <h4 className="text-lg font-medium mb-2">Área de Restaurante</h4>
-                <p className="text-sm text-slate-600">Saboreie pratos deliciosos em um ambiente aconchegante</p>
+                <h4 className="text-lg font-medium mb-2">Área Gourmet</h4>
+                <p className="text-sm text-slate-600 mb-0">Espaço amplo e aconchegante para refeições e confraternizações, com estrutura completa</p>
               </div>
             </motion.div>
 
@@ -119,17 +123,19 @@ export default function Amenities() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="rounded-xl overflow-hidden shadow-lg"
             >
-              <Image
-                src={getAssetPath('/assets/nature-house.webp')}
-                alt="Jardins da pousada"
-                width={600}
-                height={400}
-                className="w-full h-64 object-cover"
-                loading="lazy"
-              />
+              <div className="relative w-full aspect-[14/9] md:aspect-[3/2] overflow-hidden">
+                <Image
+                  src={getAssetPath('/assets/playground.webp')}
+                  alt="Playground da pousada"
+                  fill
+                  className="object-cover"
+                  loading="lazy"
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                />
+              </div>
               <div className="p-4 bg-white">
-                <h4 className="text-lg font-medium mb-2">Jardins</h4>
-                <p className="text-sm text-slate-600">Caminhe por nossos jardins bem cuidados e aprecie a natureza</p>
+                <h4 className="text-lg font-medium mb-2">Playground</h4>
+                <p className="text-sm text-slate-600 mb-0">Diversão ao ar livre para as crianças, em espaço seguro integrado à área verde</p>
               </div>
             </motion.div>
           </div>

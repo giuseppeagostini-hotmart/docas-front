@@ -51,7 +51,7 @@ export default function AboutSection() {
           >
             <div className="relative z-10 rounded-lg overflow-hidden shadow-xl">
               <Image
-                src={getAssetPath('/assets/nature-house.webp')}
+                src={getAssetPath('/assets/piscina.webp')}
                 alt="Vista da Pousada Docas"
                 width={600}
                 height={500}
@@ -59,8 +59,6 @@ export default function AboutSection() {
                 loading="lazy"
               />
             </div>
-            <div className="absolute -top-8 -right-8 z-0 w-40 h-40 bg-primary/10 rounded-full hidden md:block"></div>
-            <div className="absolute -bottom-4 right-20 z-0 w-20 h-20 bg-secondary/30 rounded-full hidden md:block"></div>
           </motion.div>
         </div>
       </div>

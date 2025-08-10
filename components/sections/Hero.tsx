@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section className="relative h-screen-85 min-h-[600px] md:min-h-[700px] w-full overflow-hidden">
       <Image
-        src={getAssetPath('/assets/nature-house.webp')}
+        src={getAssetPath('/assets/casa-principal.webp')}
         alt="Pousada Docas rodeada pela natureza em Minas Gerais"
         fill
         priority
