@@ -51,7 +51,7 @@ export default function AboutSection() {
           >
             <div className="relative z-10 rounded-lg overflow-hidden shadow-xl">
               <Image
-                src={getAssetPath('/assets/piscina.webp')}
+                src={getAssetPath('/assets/bem-vindo.webp')}
                 alt="Vista da Pousada Docas"
                 width={600}
                 height={500}
