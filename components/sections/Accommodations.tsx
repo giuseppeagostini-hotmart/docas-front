@@ -49,35 +49,39 @@ const accommodations: Accommodation[] = [
     heroDescription:
       "Locação da casa principal com 6 suítes. Ideal para famílias e grupos de até 15 pessoas. Desfrute de total privacidade em um ambiente cercado pela natureza, com comodidades completas para uma estadia inesquecível.",
     suites: [
-      { name: "Suíte Girasol", people: "2 pessoas", beds: "1 cama de casal", tv: false, image: "/assets/girasol.webp" },
-      { name: "Suíte Bougainvillea", people: "2 pessoas", beds: "1 cama de casal", tv: true, image: "/assets/area-gourmet.webp" },
-      { name: "Suíte Hibisco", people: "2 pessoas", beds: "2 camas de solteiro", tv: false, image: "/assets/playground.webp" },
-      { name: "Suíte Alamanda", people: "2 pessoas", beds: "2 camas de solteiro", tv: false, image: "/assets/nature-house.webp" },
-      { name: "Suíte Margarida", people: "4 pessoas", beds: "1 casal + 2 solteiro", tv: true, image: "/assets/piscina.webp" },
-      { name: "Suíte Cosmos Amarelo", people: "3 pessoas", beds: "1 casal + 1 solteiro", tv: true, image: "/assets/area-gourmet.webp" },
+      { name: "Suíte Girasol", people: "2 pessoas", beds: "1 cama de casal", tv: false, image: "/assets/girassol-quarto.webp" },
+      { name: "Suíte Girasol", people: "2 pessoas", beds: "1 cama de casal", tv: false, image: "/assets/girassol-banheiro.webp" },
+      { name: "Suíte Bougainvillea", people: "2 pessoas", beds: "1 cama de casal", tv: true, image: "/assets/bougaville-quarto.webp" },
+      { name: "Suíte Bougainvillea", people: "2 pessoas", beds: "1 cama de casal", tv: true, image: "/assets/bougaville-banheiro.webp" },
+      { name: "Suíte Alamanda", people: "2 pessoas", beds: "2 camas de solteiro", tv: false, image: "/assets/alamanda-quarto.webp" },
+      { name: "Suíte Alamanda", people: "2 pessoas", beds: "2 camas de solteiro", tv: false, image: "/assets/alamanda-banheiro.webp" },
     ],
   },
   {
     id: 2,
-    name: "Casa principal + Chalé",
+    name: "Casa principal e Chalé",
     description:
       "Locação completa da casa principal somada ao chalé – ideal para grupos e eventos (até 31 pessoas).",
     capacity: 23,
-    bedType: "Casa principal + chalé",
+    bedType: "Casa principal e chalé",
     capacityLabel: "Até 23 pessoas",
     hasAC: true,
     hasWifi: true,
     amenities: ["Varanda", "Mini frigobar", "TV 32\"", "Mesa de trabalho"],
-    heroTitle: "Casa principal + Chalé - Locação Exclusiva",
+    heroTitle: "Casa principal e Chalé",
     heroDescription:
-      "Locação exclusiva da casa principal + chalé com 6 suítes temáticas – ideal para famílias e grupos (até 23 pessoas). Desfrute de total privacidade em um ambiente cercado pela natureza, com comodidades completas para uma estadia inesquecível.",
+      "Locação exclusiva da casa principal e chalé com 6 suítes temáticas – ideal para famílias e grupos (até 23 pessoas). Desfrute de total privacidade em um ambiente cercado pela natureza, com comodidades completas para uma estadia inesquecível.",
     suites: [
-      { name: "Suíte 1", people: "4 pessoas", beds: "1 casal + 2 solteiro", tv: true, image: "/assets/piscina.webp" },
-      { name: "Suíte 2", people: "3 pessoas", beds: "1 casal + 1 solteiro", tv: true, image: "/assets/area-gourmet.webp" },
-      { name: "Suíte 3", people: "2 pessoas", beds: "1 cama de casal", tv: true, image: "/assets/playground.webp" },
-      { name: "Suíte 4", people: "2 pessoas", beds: "2 camas de solteiro", tv: false, image: "/assets/nature-house.webp" },
-      { name: "Suíte 5", people: "2 pessoas", beds: "1 cama de casal", tv: false, image: "/assets/area-gourmet.webp" },
-      { name: "Suíte 6", people: "2 pessoas", beds: "2 camas de solteiro", tv: false, image: "/assets/piscina.webp" },
+      { name: "Chalé 2", people: "2 pessoas", beds: "1 cama de casal", tv: true, image: "/assets/chale2-quarto.webp" },
+      { name: "Chalé 2", people: "2 pessoas", beds: "1 cama de casal", tv: true, image: "/assets/chale2-banheiro.webp" },
+      { name: "Chalé 3", people: "2 pessoas", beds: "1 cama de casal", tv: true, image: "/assets/chale3-quarto.webp" },
+      { name: "Chalé 3", people: "2 pessoas", beds: "1 cama de casal", tv: true, image: "/assets/chale3-banheiro.webp" },
+      { name: "Suíte Girasol", people: "2 pessoas", beds: "1 cama de casal", tv: false, image: "/assets/girassol-quarto.webp" },
+      { name: "Suíte Girasol", people: "2 pessoas", beds: "1 cama de casal", tv: false, image: "/assets/girassol-banheiro.webp" },
+      { name: "Suíte Bougainvillea", people: "2 pessoas", beds: "1 cama de casal", tv: true, image: "/assets/bougaville-quarto.webp" },
+      { name: "Suíte Bougainvillea", people: "2 pessoas", beds: "1 cama de casal", tv: true, image: "/assets/bougaville-banheiro.webp" },
+      { name: "Suíte Alamanda", people: "2 pessoas", beds: "2 camas de solteiro", tv: false, image: "/assets/alamanda-quarto.webp" },
+      { name: "Suíte Alamanda", people: "2 pessoas", beds: "2 camas de solteiro", tv: false, image: "/assets/alamanda-banheiro.webp" },
     ],
   }
 ];
@@ -108,7 +112,7 @@ export default function Accommodations() {
   const slides: Array<{ image: string } & Partial<SuiteSlide>> = (selectedRoom.suites ?? []).map((s) => s);
 
   return (
-    <section id="acomodacoes" className="py-12 sm:py-15 bg-white">
+    <section id="acomodacoes" className="py-12 sm:py-15 bg-background">
       <div className="container-custom">
         <motion.div
           className="text-center max-w-3xl mx-auto mb-8 sm:mb-16 px-4"
@@ -118,12 +122,14 @@ export default function Accommodations() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="section-title after:left-1/2 after:-translate-x-1/2 mb-6 sm:mb-8 text-2xl sm:text-3xl md:text-4xl">
-            Nossas <span className="text-gradient">Acomodações</span>
-          </h2>
-          <p className="text-slate-700 text-sm sm:text-base">
-            Todos os nossos quartos foram cuidadosamente projetados para 
-            proporcionar o máximo de conforto durante sua estadia.
-          </p>
+  Nossas <span className="text-gradient">Acomodações</span>
+</h2>
+<p className="text-slate-700 text-sm sm:text-base">
+  Todos os nossos quartos foram cuidadosamente projetados para proporcionar o máximo de conforto durante sua estadia. 
+  Você pode escolher entre duas opções de locação: <strong>Casa Principal</strong> ou 
+  <strong> Casa Principal e Chalé</strong>. Os chalés não são alugados separadamente.
+</p>
+
         </motion.div>
 
         {/* Mobile Room Selection */}

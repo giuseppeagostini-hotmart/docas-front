@@ -30,7 +30,7 @@ const amenities = [
 
 export default function Amenities() {
   return (
-    <section id="estrutura" className="py-15 bg-background">
+    <section id="estrutura" className="py-15 bg-white">
       <div className="container-custom">
         <motion.div
           className="text-center max-w-3xl mx-auto mb-16"

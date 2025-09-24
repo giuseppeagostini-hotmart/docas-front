@@ -7,7 +7,7 @@ const faqs = [
 	{
 		question: "Quais são as opções de locação disponíveis?",
 		answer:
-			"Trabalhamos com duas opções principais: Casa principal (até 15 pessoas, 6 quartos) e Casa + Chalé (até 23 pessoas, 10 quartos). Não alugamos os chalés separadamente; a locação é sempre da casa inteira ou do pacote completo.",
+			"Trabalhamos com duas opções principais: Casa principal (até 15 pessoas, 6 quartos) e Casa e Chalé (até 23 pessoas, 10 quartos). Não alugamos os chalés separadamente; a locação é sempre da casa inteira ou do pacote completo.",
 	},
 	{
 		question: "Vocês ainda oferecem hospedagem em quartos individuais?",

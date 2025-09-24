@@ -17,8 +17,8 @@ export default function Home() {
       />
       <Hero />
       <AboutSection />
-      <Accommodations />
       <Amenities />
+      <Accommodations />
       <EventsSection />
       <TestimonialsSection />
       <FaqSection />
