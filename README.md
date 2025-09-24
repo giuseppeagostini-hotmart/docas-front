@@ -41,12 +41,6 @@ Para criar uma versão de produção:
 npm run build
 ```
 
-## 🌐 Deploy
-
-O site é automaticamente deployado para GitHub Pages quando há push na branch `main`.
-
-URL do site: https://giuseppeagostini-hotmart.github.io/docas-front/
-
 ## 📝 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes. 
