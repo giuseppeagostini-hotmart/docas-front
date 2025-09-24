@@ -1,7 +1,6 @@
 # Pousada Docas
 
-Website da Pousada Docas, desenvolvido com Next.js, TypeScript e Tailwind CSS. O site apresenta informações sobre a pousada, incluindo acomodações, eventos, depoimentos e formulário de contato.
-
+POC para fazer testes de imagem com webp
 ## 🚀 Tecnologias
 
 - [Next.js 14](https://nextjs.org/)
