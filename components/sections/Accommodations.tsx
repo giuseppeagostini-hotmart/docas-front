@@ -72,10 +72,14 @@ const accommodations: Accommodation[] = [
     heroDescription:
       "Locação exclusiva da casa principal e chalé com 6 suítes temáticas – ideal para famílias e grupos (até 23 pessoas). Desfrute de total privacidade em um ambiente cercado pela natureza, com comodidades completas para uma estadia inesquecível.",
     suites: [
+      { name: "Chalé 1", people: "2 pessoas", beds: "1 cama de casal", tv: true, image: "/assets/chale1-quarto.webp" },
+      { name: "Chalé 1", people: "2 pessoas", beds: "1 cama de casal", tv: true, image: "/assets/chale1-banheiro.webp" },
       { name: "Chalé 2", people: "2 pessoas", beds: "1 cama de casal", tv: true, image: "/assets/chale2-quarto.webp" },
       { name: "Chalé 2", people: "2 pessoas", beds: "1 cama de casal", tv: true, image: "/assets/chale2-banheiro.webp" },
       { name: "Chalé 3", people: "2 pessoas", beds: "1 cama de casal", tv: true, image: "/assets/chale3-quarto.webp" },
       { name: "Chalé 3", people: "2 pessoas", beds: "1 cama de casal", tv: true, image: "/assets/chale3-banheiro.webp" },
+      { name: "Chalé 4", people: "2 pessoas", beds: "1 cama de casal", tv: true, image: "/assets/chale4-quarto.webp" },
+      { name: "Chalé 4", people: "2 pessoas", beds: "1 cama de casal", tv: true, image: "/assets/chale4-banheiro.webp" },
       { name: "Suíte Girasol", people: "2 pessoas", beds: "1 cama de casal", tv: false, image: "/assets/girassol-quarto.webp" },
       { name: "Suíte Girasol", people: "2 pessoas", beds: "1 cama de casal", tv: false, image: "/assets/girassol-banheiro.webp" },
       { name: "Suíte Bougainvillea", people: "2 pessoas", beds: "1 cama de casal", tv: true, image: "/assets/bougaville-quarto.webp" },
