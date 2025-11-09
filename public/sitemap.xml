@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Página principal -->
+  <url>
+    <loc>https://www.pousadadocas.com.br/</loc>
+    <lastmod>2025-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.pousadadocas.com.br/assets/casa-principal.webp</image:loc>
+      <image:title>Pousada Docas - Casa principal</image:title>
+      <image:caption>Vista da casa principal da Pousada Docas em Minas Gerais</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.pousadadocas.com.br/assets/bem-vindo.webp</image:loc>
+      <image:title>Pousada Docas - Bem-vindo</image:title>
+      <image:caption>Área externa da Pousada Docas cercada pela natureza</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.pousadadocas.com.br/assets/piscina.webp</image:loc>
+      <image:title>Pousada Docas - Piscina</image:title>
+      <image:caption>Piscina da Pousada Docas com vista para a área verde</image:caption>
+    </image:image>
+  </url>
+
+</urlset>

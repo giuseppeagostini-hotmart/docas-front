@@ -9,15 +9,14 @@ import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 
 const EVENT_IMAGES = [
-  "/assets/casamento.webp",
-  "/assets/casamento.webp",
-  "/assets/casamento.webp",
-  "/assets/casamento.webp",
-  "/assets/casamento.webp",
-  "/assets/casamento.webp",
-  "/assets/casamento.webp",
-  "/assets/casamento.webp",
-  "/assets/casamento.webp",
+  "/assets/casamento1.webp",
+  "/assets/confra.webp",
+  "/assets/casamento5.webp",
+  "/assets/casamento2.webp",
+  "/assets/familia.webp",
+  "/assets/casamento3.webp",
+  "/assets/casal1.webp",
+  "/assets/evento1.webp",
 ];
 
 export default function EventsSection() {
@@ -33,6 +32,21 @@ export default function EventsSection() {
     slides: {
       perView: 1,
       spacing: 0,
+    },
+    breakpoints: {
+      "(min-width: 768px)": {
+        slides: {
+          perView: 2,
+          spacing: 12,
+        },
+      },
+      "(min-width: 1024px)": {
+        mode: "free",
+        slides: {
+          perView: 3,
+          spacing: 12,
+        },
+      },
     },
   });
 
@@ -61,14 +75,20 @@ export default function EventsSection() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <div ref={sliderRef} className="keen-slider relative rounded-lg overflow-hidden shadow-lg h-[300px] sm:h-[400px] md:h-[475px]">
+          <div
+            ref={sliderRef}
+            className="keen-slider relative rounded-lg overflow-hidden shadow-lg h-[300px] sm:h-[400px] lg:h-[300px] xl:h-[320px]"
+          >
             {EVENT_IMAGES.map((image, idx) => (
-              <div key={idx} className="keen-slider__slide relative w-full !min-w-full">
+              <div
+                key={idx}
+                className="keen-slider__slide relative w-full lg:w-auto lg:min-w-0"
+              >
                 <Image
                   src={getAssetPath(image)}
                   alt={`Evento - imagem ${idx + 1}`}
                   fill
-                  className="object-cover"
+                  className="object-cover rounded"
                   loading="lazy"
                 />
               </div>

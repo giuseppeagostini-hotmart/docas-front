@@ -56,10 +56,7 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
-  const isProd = process.env.NODE_ENV === 'production';
-  const basePath = isProd ? '/docas-front' : '';
-  
+}>) {  
   return (
     <html lang="pt-BR" className="scroll-smooth">
       <head>
